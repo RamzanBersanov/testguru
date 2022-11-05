@@ -1,56 +1,85 @@
-User.create!([{ name: "Иван" }, { name: "Мага" }, { name: "Руслан" }])
+user_ivan = User.create!(name: "Иван")
+user_maga = User.create!(name: "Мага")
+user_ruslan = User.create(name: "Руслан")
 p "Created #{User.count} Users"
 
-Category.create!([{ title: "Academic" }, { title: "Logic" }])
-p "Created #{Category.count} Categories"
+logical_category = Category.create!(title: "Логические")
+academic_category = Category.create!(title: "Академические")
+p "Created #{User.count} Users"
 
-Test.create!([{
-  title: "History",
-  level: "1",
-  author_id: "1",
-  category_id: "1"
-},
-{
-  title: "History",
-  level: "2",
-  author_id: "2",
-  category_id: "1"
-},
-{
-  title: "Geography",
-  level: "1",
-  author_id: "2",
-  category_id: "1"
-}])
+history_test1 = Test.create!(title: "История", level: "1", author_id: user_maga.id, category_id: academic_category.id)
+history_test2 = Test.create!(title: "История", level: "1", author_id: user_maga.id, category_id: academic_category.id)
+geography_test1 = Test.create!(title: "География", level: "1", author_id: user_ruslan.id, category_id: academic_category.id)
+geography_test2 = Test.create!(title: "География", level: "2", author_id: user_ruslan.id, category_id: academic_category.id)
+logical_test1 = Test.create!(title: "Логика", level: "1", author_id: user_ivan.id, category_id: logical_category.id)
+logical_test2 = Test.create!(title: "Логика", level: "2", author_id: user_ivan.id, category_id: logical_category.id)
 p "Created #{Test.count} Tests"
 
-Question.create!([{
-  body: "Первый президент США",
-  test_id: "1"
-},
-{
-  body: "Первый президент России",
-  test_id: "1"
-},
-{
-  body: "Самая большая страна в мире",
-  test_id: "2"
-}])
+history_question1 = Question.create!(body: "Первый президент России", test_id: history_test1.id)
+history_question2 = Question.create!(body: "Год распада СССР", test_id: history_test1.id)
+history_question3 = Question.create!(body: "Какой город стал столицей Древнерусского государства?", test_id: history_test1.id)
+history_question4 = Question.create!(body: "В каком городе находится самый крупный музей России — Эрмитаж?", test_id: history_test2.id)
+history_question5 = Question.create!(body: "Когда в России отменили крепостное право?", test_id: history_test2.id)
+history_question6 = Question.create!(body: "Кем был П.И. Чайковский?", test_id: history_test2.id)
+geography_question1 = Question.create!(body: "Самая большая страна в мире", test_id: geography_test1.id)
+geography_question2 = Question.create!(body: "Сколько часовых поясов в России?", test_id: geography_test1.id)
+geography_question3 = Question.create!(body: "Какое море омывает берега Италии?", test_id: geography_test1.id)
+geography_question4 = Question.create!(body: "Самое маленькое государство в Европе", test_id: geography_test2.id)
+geography_question5 = Question.create!(body: "Как называется самый известный водопад в Канаде?", test_id: geography_test2.id)
+geography_question6 = Question.create!(body: "Что такое муссон?", test_id: geography_test2.id)
+logical_question1 = Question.create!(body: "Каких камней не бывает в речке?", test_id: logical_test1.id)
+logical_question2 = Question.create!(body: "Что не вместится даже в самую большую кастрюлю?", test_id: logical_test1.id)
+logical_question3 = Question.create!(body: "Что можно завязать, но нельзя развязать?", test_id: logical_test1.id)
 p "Created #{Question.count} Questions"
 
-Answer.create!([{
-  body: "Джордж Вашингтон",
-  correct: true,
-  question_id: "1"
-},
-{
-  body: "Борис Ельцин",
-  correct: true,
-  question_id: "2"
-},
-{
-  body: "Россия",
-  correct: true,
-  question_id: "3"
-}])
+history_answer1_q1 = Answer.create!(body: "Ельцин", correct: true, question_id: history_question1.id)
+history_answer2_q1 = Answer.create!(body: "Путин", correct: false, question_id: history_question1.id)
+history_answer3_q1 = Answer.create!(body: "Медведев", correct: false, question_id: history_question1.id)
+history_answer1_q2 = Answer.create!(body: "1991", correct: true, question_id: history_question2.id)
+history_answer2_q2 = Answer.create!(body: "1990", correct: false, question_id: history_question2.id)
+history_answer3_q2 = Answer.create!(body: "1992", correct: false, question_id: history_question2.id)
+history_answer1_q3 = Answer.create!(body: "Киев", correct: true, question_id: history_question3.id)
+history_answer2_q3 = Answer.create!(body: "Москва", correct: false, question_id: history_question3.id)
+history_answer3_q3 = Answer.create!(body: "Таганрог", correct: false, question_id: history_question3.id)
+history_answer1_q4 = Answer.create!(body: "Санкт-Петербург", correct: true, question_id: history_question4.id)
+history_answer2_q4 = Answer.create!(body: "Казань", correct: false, question_id: history_question4.id)
+history_answer3_q4 = Answer.create!(body: "Екатеринбург", correct: false, question_id: history_question4.id)
+history_answer1_q5 = Answer.create!(body: "1861", correct: true, question_id: history_question5.id)
+history_answer2_q5 = Answer.create!(body: "1821", correct: false, question_id: history_question5.id)
+history_answer3_q5 = Answer.create!(body: "1561", correct: false, question_id: history_question5.id)
+history_answer1_q6 = Answer.create!(body: "Композитором", correct: true, question_id: history_question6.id)
+history_answer2_q6 = Answer.create!(body: "Художником", correct: false, question_id: history_question6.id)
+history_answer3_q6 = Answer.create!(body: "Писателем", correct: false, question_id: history_question6.id)
+geography_answer1_q1 = Answer.create!(body: "Россия", correct: true, question_id: geography_question1.id)
+geography_answer2_q1 = Answer.create!(body: "Канада", correct: false, question_id: geography_question1.id)
+geography_answer3_q1 = Answer.create!(body: "США", correct: false, question_id: geography_question1.id)
+geography_answer1_q2 = Answer.create!(body: "11", correct: true, question_id: geography_question2.id)
+geography_answer2_q2 = Answer.create!(body: "3", correct: false, question_id: geography_question2.id)
+geography_answer3_q2 = Answer.create!(body: "7", correct: false, question_id: geography_question2.id)
+geography_answer1_q3 = Answer.create!(body: "Средиземное", correct: true, question_id: geography_question3.id)
+geography_answer2_q3 = Answer.create!(body: "Черное", correct: false, question_id: geography_question3.id)
+geography_answer3_q3 = Answer.create!(body: "Красное", correct: false, question_id: geography_question3.id)
+geography_answer1_q4 = Answer.create!(body: "Ватикан", correct: true, question_id: geography_question4.id)
+geography_answer2_q4 = Answer.create!(body: "Мальта", correct: false, question_id: geography_question4.id)
+geography_answer3_q4 = Answer.create!(body: "Андорра", correct: false, question_id: geography_question4.id)
+geography_answer1_q5 = Answer.create!(body: "Ниагарский", correct: true, question_id: geography_question5.id)
+geography_answer2_q5 = Answer.create!(body: "Анхель", correct: false, question_id: geography_question5.id)
+geography_answer3_q5 = Answer.create!(body: "Виктория", correct: false, question_id: geography_question5.id)
+geography_answer1_q6 = Answer.create!(body: "Ветер", correct: true, question_id: geography_question6.id)
+geography_answer2_q6 = Answer.create!(body: "Течение", correct: false, question_id: geography_question6.id)
+geography_answer3_q6 = Answer.create!(body: "Тропический дождь", correct: false, question_id: geography_question6.id)
+logic_answer1_q1 = Answer.create!(body: "Сухих", correct: true, question_id: logical_question1.id)
+logic_answer2_q1 = Answer.create!(body: "Драгоценных", correct: false, question_id: logical_question1.id)
+logic_answer3_q1 = Answer.create!(body: "Больших", correct: false, question_id: logical_question1.id)
+logic_answer1_q2 = Answer.create!(body: "Ее крышка", correct: true, question_id: logical_question2.id)
+logic_answer2_q2 = Answer.create!(body: "Большая репа", correct: false, question_id: logical_question2.id)
+logic_answer3_q2 = Answer.create!(body: "Кочан капусты", correct: false, question_id: logical_question2.id)
+logic_answer1_q3 = Answer.create!(body: "Разговор", correct: true, question_id: logical_question3.id)
+logic_answer2_q3 = Answer.create!(body: "Шнурки", correct: false, question_id: logical_question3.id)
+logic_answer3_q3 = Answer.create!(body: "Наушники", correct: false, question_id: logical_question3.id)
 p "Created #{Answer.count} Answers"
+
+tests_user1 = TestsUser.create(test_id: '1', user_id: '1')
+tests_user2 = TestsUser.create(test_id: '2', user_id: '1')
+tests_user3 = TestsUser.create(test_id: '3', user_id: '2')
+tests_user4 = TestsUser.create(test_id: '4', user_id: '2')
