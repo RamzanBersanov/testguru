@@ -79,8 +79,8 @@ Answer.create!(body: "Шнурки", correct: false, question_id: logical_questi
 Answer.create!(body: "Наушники", correct: false, question_id: logical_question3.id)
 p "Created #{Answer.count} Answers"
 
-TestsUser.create(test_id: '1', user_id: '1')
-TestsUser.create(test_id: '2', user_id: '1')
-TestsUser.create(test_id: '3', user_id: '2')
-TestsUser.create(test_id: '4', user_id: '2')
+TestsUser.create(test_id: history_test1.id, user_id: user_ivan.id)
+TestsUser.create(test_id: history_test2.id, user_id: user_ivan.id)
+TestsUser.create(test_id: geography_test1.id, user_id: user_maga.id)
+TestsUser.create(test_id: geography_test2.id, user_id: user_maga.id)
 p "Created #{TestsUser.count} Answers"
