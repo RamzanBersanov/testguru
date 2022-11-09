@@ -3,7 +3,11 @@
 one:
   title: MyString
   level: 1
+  user: one
+  category: one
 
 two:
   title: MyString
   level: 1
+  user: two
+  category: two
