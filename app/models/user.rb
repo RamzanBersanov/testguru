@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  has_many :tests, inverse_of: 'author'
-  has_many :tests_users
+
+  has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :tests_users, dependent: :destroy
   has_many :tests, through: :tests_users
+
   def passed_tests(test_level)
-    Test
-      .joins('JOIN tests_users ON tests.id = tests_users.test_id')
-      .where(tests_users: {user_id: id}, tests: {level: test_level})
+    tests.where(level: test_level).pluck("title")
   end
 end
