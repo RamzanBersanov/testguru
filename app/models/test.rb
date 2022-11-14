@@ -1,5 +1,4 @@
 class Test < ApplicationRecord
-
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :category
 
@@ -8,9 +7,9 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   def self.by_category(category_title)
-    Test.joins('JOIN categories ON categories.id = tests.category_id')
-      .where(categories: {title: 'Academic'})
-      .order(title: :desc)
-      .pluck(:title)
+    joins(:category)
+    .where(categories: {title: category_title})
+    .order(title: :desc)
+    .pluck("title")
   end
 end
