@@ -1,82 +1,92 @@
-user_ivan = User.create!(name: "Иван")
-user_maga = User.create!(name: "Мага")
-user_ruslan = User.create(name: "Руслан")
+users = User.create!([
+  { name: "Иван" },
+  { name: "Мага" },
+  { name: "Руслан"}
+])
 p "Created #{User.count} Users"
 
-logical_category = Category.create!(title: "Логические")
-academic_category = Category.create!(title: "Академические")
-p "Created #{User.count} Users"
+categories = Category.create!([
+  { title: "Логические" },
+  { title: "Академические" }
+])
+p "Created #{Category.count} Categories"
 
-history_test1 = Test.create!(title: "История", level: "1", author: users[0], category: categories[0])
-history_test2 = Test.create!(title: "История", level: "1", author: users[0], category: categories[0])
-geography_test1 = Test.create!(title: "География", level: "1", author: users[1], category: categories[0])
-geography_test2 = Test.create!(title: "География", level: "2", author: users[1], category: categories[0])
-logical_test1 = Test.create!(title: "Логика", level: "1", author: users[2], category: categories[1])
-logical_test2 = Test.create!(title: "Логика", level: "2", author: users[2], category: categories[1])
+tests = Test.create!([
+    { title: "История", level: "1", author: users[0], category: categories[0] },
+    { title: "История", level: "1", author: users[0], category: categories[0] },
+    { title: "География", level: "1", author: users[1], category: categories[0] },
+    { title: "География", level: "2", author: users[1], category: categories[0] },
+    { title: "Логика", level: "1", author: users[2], category: categories[1] },
+    { title: "Логика", level: "2", author: users[2], category: categories[1] }
+])
 p "Created #{Test.count} Tests"
 
-history_question1 = Question.create!(body: "Первый президент России", test: tests[0])
-history_question2 = Question.create!(body: "Год распада СССР", test: tests[0])
-history_question3 = Question.create!(body: "Какой город стал столицей Древнерусского государства?", test: tests[0])
-history_question4 = Question.create!(body: "В каком городе находится самый крупный музей России — Эрмитаж?", test: tests[1])
-history_question5 = Question.create!(body: "Когда в России отменили крепостное право?", test: tests[1])
-history_question6 = Question.create!(body: "Кем был П.И. Чайковский?", test: tests[1])
-geography_question1 = Question.create!(body: "Самая большая страна в мире", test: tests[2])
-geography_question2 = Question.create!(body: "Сколько часовых поясов в России?", test: tests[2])
-geography_question3 = Question.create!(body: "Какое море омывает берега Италии?", test: tests[2])
-geography_question4 = Question.create!(body: "Самое маленькое государство в Европе", test: tests[3])
-geography_question5 = Question.create!(body: "Как называется самый известный водопад в Канаде?", test: tests[3])
-geography_question6 = Question.create!(body: "Что такое муссон?", test: tests[3])
-logical_question1 = Question.create!(body: "Каких камней не бывает в речке?", test: tests[4])
-logical_question2 = Question.create!(body: "Что не вместится даже в самую большую кастрюлю?", test: tests[4])
-logical_question3 = Question.create!(body: "Что можно завязать, но нельзя развязать?", test: tests[4])
+questions = Question.create!([
+  { body: "Первый президент России", test: tests[0] },
+  { body: "Год распада СССР", test: tests[0] },
+  { body: "Какой город стал столицей Древнерусского государства?", test: tests[0] },
+  { body: "В каком городе находится самый крупный музей России — Эрмитаж?", test: tests[1] },
+  { body: "Когда в России отменили крепостное право?", test: tests[1] },
+  { body: "Кем был П.И. Чайковский?", test: tests[1] },
+  { body: "Самая большая страна в мире", test: tests[2] },
+  { body: "Сколько часовых поясов в России?", test: tests[2] },
+  { body: "Какое море омывает берега Италии?", test: tests[2] },
+  { body: "Самое маленькое государство в Европе", test: tests[3] },
+  { body: "Как называется самый известный водопад в Канаде?", test: tests[3] },
+  { body: "Что такое муссон?", test: tests[3] },
+  { body: "Каких камней не бывает в речке?", test: tests[4] },
+  { body: "Что не вместится даже в самую большую кастрюлю?", test: tests[4] },
+  { body: "Что можно завязать, но нельзя развязать?", test: tests[4] }
+])
 p "Created #{Question.count} Questions"
 
-Answer.create!(body: "Ельцин", correct: true, question: questions[0])
-Answer.create!(body: "Путин", correct: false, question: questions[0])
-Answer.create!(body: "Медведев", correct: false, question: questions[0])
-Answer.create!(body: "1991", correct: true, question: questions[1])
-Answer.create!(body: "1990", correct: false, question: questions[1])
-Answer.create!(body: "1992", correct: false, question: questions[1])
-Answer.create!(body: "Киев", correct: true, question: questions[2])
-Answer.create!(body: "Москва", correct: false, question: questions[2])
-Answer.create!(body: "Таганрог", correct: false, question: questions[2])
-Answer.create!(body: "Санкт-Петербург", correct: true, question: questions[3])
-Answer.create!(body: "Казань", correct: false, question: questions[3])
-Answer.create!(body: "Екатеринбург", correct: false, question: questions[3])
-Answer.create!(body: "1861", correct: true, question: questions[4])
-Answer.create!(body: "1821", correct: false, question: questions[4])
-Answer.create!(body: "1561", correct: false, question: questions[4])
-Answer.create!(body: "Композитором", correct: true, question: questions[5])
-Answer.create!(body: "Художником", correct: false, question: questions[5])
-Answer.create!(body: "Писателем", correct: false, question: questions[5])
-Answer.create!(body: "Россия", correct: true, question: questions[6])
-Answer.create!(body: "Канада", correct: false, question: questions[6])
-Answer.create!(body: "США", correct: false, question: questions[6])
-Answer.create!(body: "11", correct: true, question: questions[7])
-Answer.create!(body: "3", correct: false, question: questions[7])
-Answer.create!(body: "7", correct: false, question: questions[7])
-Answer.create!(body: "Средиземное", correct: true, question: questions[8])
-Answer.create!(body: "Черное", correct: false, question: questions[8])
-Answer.create!(body: "Красное", correct: false, question: questions[8])
-Answer.create!(body: "Ватикан", correct: true, question: questions[9])
-Answer.create!(body: "Мальта", correct: false, question: questions[9])
-Answer.create!(body: "Андорра", correct: false, question: questions[9])
-Answer.create!(body: "Ниагарский", correct: true, question: questions[10])
-Answer.create!(body: "Анхель", correct: false, question: questions[10])
-Answer.create!(body: "Виктория", correct: false, question: questions[10])
-Answer.create!(body: "Ветер", correct: true, question: questions[11])
-Answer.create!(body: "Течение", correct: false, question: questions[11])
-Answer.create!(body: "Тропический дождь", correct: false, question: questions[11])
-Answer.create!(body: "Сухих", correct: true, question: questions[12])
-Answer.create!(body: "Драгоценных", correct: false, question: questions[12])
-Answer.create!(body: "Больших", correct: false, question: questions[12])
-Answer.create!(body: "Ее крышка", correct: true, question: questions[13])
-Answer.create!(body: "Большая репа", correct: false, question: questions[13])
-Answer.create!(body: "Кочан капусты", correct: false, question: questions[13])
-Answer.create!(body: "Разговор", correct: true, question: questions[14])
-Answer.create!(body: "Шнурки", correct: false, question: questions[14])
-Answer.create!(body: "Наушники", correct: false, question: questions[14])
+Answer.create!([
+  { body: "Ельцин", correct: true, question: questions[0] },
+  { body: "Путин", correct: false, question: questions[0] },
+  { body: "Медведев", correct: false, question: questions[0] },
+  { body: "1991", correct: true, question: questions[1] },
+  { body: "1990", correct: false, question: questions[1] },
+  { body: "1992", correct: false, question: questions[1] },
+  { body: "Киев", correct: true, question: questions[2] },
+  { body: "Москва", correct: false, question: questions[2] },
+  { body: "Таганрог", correct: false, question: questions[2] },
+  { body: "Санкт-Петербург", correct: true, question: questions[3] },
+  { body: "Казань", correct: false, question: questions[3] },
+  { body: "Екатеринбург", correct: false, question: questions[3] },
+  { body: "1861", correct: true, question: questions[4] },
+  { body: "1821", correct: false, question: questions[4] },
+  { body: "1561", correct: false, question: questions[4] },
+  { body: "Композитором", correct: true, question: questions[5] },
+  { body: "Художником", correct: false, question: questions[5] },
+  { body: "Писателем", correct: false, question: questions[5] },
+  { body: "Россия", correct: true, question: questions[6] },
+  { body: "Канада", correct: false, question: questions[6] },
+  { body: "США", correct: false, question: questions[6] },
+  { body: "11", correct: true, question: questions[7] },
+  { body: "3", correct: false, question: questions[7] },
+  { body: "7", correct: false, question: questions[7] },
+  { body: "Средиземное", correct: true, question: questions[8] },
+  { body: "Черное", correct: false, question: questions[8] },
+  { body: "Красное", correct: false, question: questions[8] },
+  { body: "Ватикан", correct: true, question: questions[9] },
+  { body: "Мальта", correct: false, question: questions[9] },
+  { body: "Андорра", correct: false, question: questions[9] },
+  { body: "Ниагарский", correct: true, question: questions[10] },
+  { body: "Анхель", correct: false, question: questions[10] },
+  { body: "Виктория", correct: false, question: questions[10] },
+  { body: "Ветер", correct: true, question: questions[11] },
+  { body: "Течение", correct: false, question: questions[11] },
+  { body: "Тропический дождь", correct: false, question: questions[11] },
+  { body: "Сухих", correct: true, question: questions[12] },
+  { body: "Драгоценных", correct: false, question: questions[12] },
+  { body: "Больших", correct: false, question: questions[12] },
+  { body: "Ее крышка", correct: true, question: questions[13] },
+  { body: "Большая репа", correct: false, question: questions[13] },
+  { body: "Кочан капусты", correct: false, question: questions[13] },
+  { body: "Разговор", correct: true, question: questions[14] },
+  { body: "Шнурки", correct: false, question: questions[14] },
+  { body: "Наушники", correct: false, question: questions[14] }
+])
 p "Created #{Answer.count} Answers"
 
 TestsUser.create(test: tests[0], user: users[0])
