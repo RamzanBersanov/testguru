@@ -1,23 +1,23 @@
 users = User.create!([
-  { name: "Иван" },
-  { name: "Мага" },
-  { name: "Руслан"}
+  { name: "Иван", email: 'ivan@mail.ru' },
+  { name: "Мага", email: 'maga@mail.ru' },
+  { name: "Руслан", email: 'rus@mail.ru'}
 ])
 p "Created #{User.count} Users"
 
 categories = Category.create!([
-  { title: "Логические" },
-  { title: "Академические" }
+  { title: "Академические" },
+  { title: "Логические" }
 ])
 p "Created #{Category.count} Categories"
 
 tests = Test.create!([
-    { title: "История", level: "1", author: users[0], category: categories[0] },
-    { title: "История", level: "1", author: users[0], category: categories[0] },
-    { title: "География", level: "1", author: users[1], category: categories[0] },
-    { title: "География", level: "2", author: users[1], category: categories[0] },
-    { title: "Логика", level: "1", author: users[2], category: categories[1] },
-    { title: "Логика", level: "2", author: users[2], category: categories[1] }
+    { title: "История-1", level: "1", author: users[0], category: categories[0] },
+    { title: "История-2", level: "2", author: users[0], category: categories[0] },
+    { title: "География-1", level: "3", author: users[1], category: categories[0] },
+    { title: "География-2", level: "4", author: users[1], category: categories[0] },
+    { title: "Логика-1", level: "5", author: users[2], category: categories[1] },
+    { title: "Логика-2", level: "6", author: users[2], category: categories[1] }
 ])
 p "Created #{Test.count} Tests"
 
