@@ -6,8 +6,8 @@ class Test < ApplicationRecord
   has_many :users, through: :tests_users
   has_many :questions, dependent: :destroy
 
-  validates :title, presence: true, uniqueness: true
-  validates :level, :numericality => { only_integer: true, greater_than: 0 }, uniqueness: true
+  validates :title, uniqueness: { scope: :level, message: "can only be one test with such title and level" }
+  validates :level, :numericality => { only_integer: true, greater_than: 0 }
 
   scope :passed, -> (test_level) { where(level: test_level) }
   scope :easy, -> { where(level: 0..1) }
@@ -15,7 +15,9 @@ class Test < ApplicationRecord
   scope :difficult, -> { where(level: 5..Float::INFINITY) }
   scope :category_title, -> (category_title) { joins(:category)
                                                 .where(categories: {title: category_title})
-                                                .order(title: :desc)
-                                                .pluck(:title) }
+                                                .order(title: :desc) }
 
+  def self.titles_by_category(category_title)
+    category_title(category_title).pluck(:title)
+  end
 end
