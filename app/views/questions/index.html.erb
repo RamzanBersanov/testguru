@@ -1,7 +1,7 @@
-<h1><%= "Вопросы теста №#{@test_id}" %></h1>
+<h1><%= "Вопросы теста #{@test.title}" %></h1>
 
 <ul>
-  <% @questions.each do |question| %>
+  <% @test.questions.each do |question| %>
     <li>
       <%= question.body %>
     </li>
