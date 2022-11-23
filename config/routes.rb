@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :tests do
+    resources :questions, shallow: true
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/tests/:test_id/questions', to: 'questions#index'
+  get '/questions/:id', to: 'questions#show'
+  get '/tests/:test_id/questions/new', to: "questions#new"
+  post '/tests/:test_id/questions(.:format)', to: "questions#create"
+  delete '/questions/:id', to: 'questions#destroy'
 end
