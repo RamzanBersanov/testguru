@@ -9,8 +9,8 @@ class Answer < ApplicationRecord
   private
 
   def validate_answer_number
-    if question.answers.count >= 4
-     errors.add(:question, "Number of answers must be between 1 and 4")
-   end
+    return unless question.answers.count >= 4
+
+    errors.add(:question, 'Number of answers must be between 1 and 4')
   end
 end

@@ -1,0 +1,5 @@
+<h1><%= @question.body %></h1>
+
+<ul>
+  <li><%= link_to 'Удалить вопрос', question_path(@question), data: { turbo_method: "delete", turbo_confirm: "Вы уверены?" }  %></li>
+</ul>
