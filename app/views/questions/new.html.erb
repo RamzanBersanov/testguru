@@ -1,7 +1,3 @@
-<h1>Create new question</h1>
+<h1><%= question_header(@test, "create") %></h1>
 
-<%= form_with model: [@test, @question], url: test_questions_path(@test, @question) do |form| %>
-  <%= form.text_field :body %>
-
-  <%= form.submit %>
-<% end %>
+<%= render 'form' %>
