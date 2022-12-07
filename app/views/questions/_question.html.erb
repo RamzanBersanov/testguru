@@ -1,8 +1,0 @@
-<tr>
-  <td><%= question.body %></td><br>
-  <td><%= link_to 'Показать вопрос', question_path(question) %></td><br>
-  <td><%= link_to 'Редактировать вопрос', edit_question_path(question) %></td><br>
-  <td><%= link_to 'Удалить вопрос',
-                  question_path(question),
-                  data: { turbo_method: "delete", turbo_confirm: "Вы уверены?" } %></td><br>
-</tr>
