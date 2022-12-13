@@ -90,8 +90,7 @@ Answer.create!([
                ])
 p "Created #{Answer.count} Answers"
 
-TestsUser.create(test: tests[0], user: users[0])
-TestsUser.create(test: tests[1], user: users[0])
-TestsUser.create(test: tests[2], user: users[1])
-TestsUser.create(test: tests[3], user: users[2])
-p "Created #{TestsUser.count} Answers"
+TestPassage.create(test: tests[0], user: users[0])
+TestPassage.create(test: tests[1], user: users[0])
+TestPassage.create(test: tests[2], user: users[1])
+TestPassage.create(test: tests[3], user: users[2])
