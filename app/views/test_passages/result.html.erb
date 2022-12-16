@@ -4,8 +4,15 @@
 
 <p><%= "Количество правильных ответов: #{@test_passage.correct_questions}" %></p>
 <p><%= "Дано #{@test_passage.correct_percentage}% правильных ответов" %></p>
-<% if @test_passage.correct_percentage >= 85 %>
-<p style="color: green;">Тест пройден успешно!</p>
-<% else %>
-<p style="color: red;">Вы не прошли тест.</p>
-<% end %>
+
+<p>
+  <span
+    class="result <%= @test_passage.successful? ? 'success' : 'fail' %>"
+  >
+    <% if @test_passage.successful? %>
+      Тест сдан
+    <% else %>
+      Тест провален
+    <% end %>
+  </span>
+</p>
