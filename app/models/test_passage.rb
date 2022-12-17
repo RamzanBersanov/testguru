@@ -1,11 +1,11 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_RATIO = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', foreign_key: 'current_question_id', optional: true
 
   before_validation :set_current_question, on: [ :create, :update ]
-
-  SUCCESS_RATIO = 85
 
   def completed?
     current_question.nil?
