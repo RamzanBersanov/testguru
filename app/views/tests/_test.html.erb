@@ -1,0 +1,14 @@
+<tr>
+  <td><%= test.title %></td><br>
+  <td><%= test_level(test) %></td><br>
+  <td><%= test.questions.count %></td><br>
+  <td><%= link_to 'Показать тест', test_path(test) %></td><br>
+  <td><%= link_to 'Редактировать тест', edit_test_path(test) %></td><br>
+  <td>
+    <%= link_to 'Удалить тест',
+                  test_path(test),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+  </td><br>
+  <td><%= button_to 'Пройти тест', start_test_path(test) %></td>
+</tr>
