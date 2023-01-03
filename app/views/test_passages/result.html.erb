@@ -1,0 +1,18 @@
+<h1> Тест <%= @test_passage.test.title %> завершён!</h1>
+
+<p><%= link_to 'Назад к списку тестов', tests_path %></p>
+
+<p><%= "Количество правильных ответов: #{@test_passage.correct_questions}" %></p>
+<p><%= "Дано #{@test_passage.correct_percentage}% правильных ответов" %></p>
+
+<p>
+  <span
+    class="result <%= @test_passage.successful? ? 'success' : 'fail' %>"
+  >
+    <% if @test_passage.successful? %>
+      <%= "#{current_user.name}, Вы сдали тест."%>
+    <% else %>
+      <%= "#{current_user.name}, Вы не сдали тест."%>
+    <% end %>
+  </span>
+</p>
