@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
     def new
       session.destroy
       @user = User.new
