@@ -3,15 +3,9 @@ class SessionsController < ApplicationController
   
     def create
       user = User.find_by(email: params[:email])
-  
       if user&.authenticate(params[:password])
         session[:user_id] = user.id
-        if cookies[:users_initial_request] != nil 
-          redirect_to cookies[:users_initial_request] 
-        else 
-          redirect_to tests_path 
-        end 
-        cookies.delete(:users_initial_request)
+        redirect_to cookies.delete(:users_initial_request) || tests_path
       else
         flash[:alert] = 'Вы Гуру? Подтвердите свой e-mail и пароль, пожалуйста'
         render :new
