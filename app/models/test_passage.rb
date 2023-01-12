@@ -5,20 +5,18 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', foreign_key: 'current_question_id', optional: true
 
-  before_validation :set_current_question, on: [ :create, :update ]
+  before_validation :set_current_question, on: %i[create update]
 
   def completed?
     current_question.nil?
   end
 
   def question_number
-    self.test.questions.index(self.current_question)+1
+    self.test.questions.index(current_question) + 1
   end
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
   end
 
@@ -45,11 +43,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if current_question.nil?
-      next_question = test.questions.first
-    else
-      next_question = test.questions.order(:id).where('id > ?', current_question.id).first
-    end
+    next_question = if current_question.nil?
+                      test.questions.first
+                    else
+                      test.questions.order(:id).where('id > ?', current_question.id).first
+                    end
   end
-
 end

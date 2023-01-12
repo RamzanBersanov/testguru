@@ -1,5 +1,4 @@
 module TestsHelper
-
   def test_level(test)
     if Test.easy.include?(test)
       :easy
@@ -11,5 +10,4 @@ module TestsHelper
       :hero
     end
   end
-
 end

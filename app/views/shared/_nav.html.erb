@@ -1,0 +1,13 @@
+<%= link_to "ТестГуру", tests_path %>
+
+<% if logged_in? %>
+    <p class="nav user">Добро пожаловать, <%= current_user.name %></b>Гуру!</p>
+    <%= link_to "Выйти из аккаунта", session_path(session), method: :delete %>
+<% elsif current_page?(signup_path) %>
+    <p><%= link_to 'Войти', login_path %><br></p>
+<% elsif current_page?(login_path) %>
+    <p><%= link_to 'Зарегистрироваться', signup_path %><br></p>
+<% else %>
+    <p><%= link_to 'Войти', login_path %><br></p>
+    <p><%= link_to 'Зарегистрироваться', signup_path %><br></p>
+<% end %>
