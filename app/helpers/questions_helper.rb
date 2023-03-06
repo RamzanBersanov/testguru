@@ -12,7 +12,6 @@ module QuestionsHelper
   end
 
   def github_url(name, author, repo)
-    link_to name, "https://github.com/#{author}/#{repo}".html_safe, target: "_blank", rel: "nofollow", rel: "nofollow"
+    link_to name, "https://github.com/#{author}/#{repo}".html_safe, target: '_blank', rel: 'nofollow', rel: 'nofollow'
   end
-
 end
