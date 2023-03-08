@@ -1,0 +1,15 @@
+
+<%= form_with model: [:admin, @test, @question, @answer], local: true do |form| %>
+  <%= form.label :body %>
+  <%= form.text_field :body %>
+
+  <%= form.submit %>
+<% end %>
+
+<p>
+  <%= link_to 'Назад к вопросу', admin_test_question_path(@question, @test) %>
+</p>
+
+<p>
+  <%= link_to 'Назад к тестам', admin_tests_path %>
+</p>

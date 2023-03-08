@@ -1,0 +1,17 @@
+<h1><%= "Вопросы теста #{@test.title} " %></h1>
+
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th colspan='4'>Действия</th>
+  </tr>
+  
+  <%= render @questions %>
+
+<p>
+  <strong><%= link_to "Создать новый вопрос", new_admin_test_question_path(test_id: @test.id) %></strong>
+</p>
+
+</table>
+
+<%= render 'back' %>

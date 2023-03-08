@@ -1,0 +1,12 @@
+<h1><%= @question.body %></h1>
+
+<ul>
+  <li><%= link_to 'Редактировать вопрос', edit_admin_test_question_path(@test, @question) %></li><br>
+  <li><%= link_to 'Удалить вопрос',
+                  admin_test_question_path(@test, @question),
+                  data: { turbo_method: "destroy", turbo_confirm: "Вы уверены?" }  %></li>
+  <li><%= link_to 'Посмотреть ответы',
+                  admin_test_question_answers_url(@test, @question) %></li>
+</ul>
+
+<%= render 'back' %>
