@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy start]
 
@@ -17,8 +19,8 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    @test.author_id = current_user.id
-    
+    @test.author = current_user
+
     if @test.save
       redirect_to admin_tests_url
     else
@@ -37,11 +39,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_url
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private

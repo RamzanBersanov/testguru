@@ -1,12 +1,6 @@
-<%= form_with model: [:admin, @test, @question, @answer], url: admin_test_question_answers_path(@test, @question, @answer) do |form| %>
-  <%= render 'shared/errors', resource: @question %>
+<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
   <%= form.text_field :body %>
   
   <%= form.submit %>
 <% end %>
-  
-<p>
-  <%= link_to 'Назад к вопросу', admin_test_question_path(@test, @question) %>
-</p>
-
-

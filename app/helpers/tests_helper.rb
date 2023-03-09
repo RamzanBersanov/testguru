@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TestsHelper
   def test_level(test)
     if Test.easy.include?(test)

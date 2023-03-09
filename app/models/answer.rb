@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Answer < ApplicationRecord
   belongs_to :question
 
@@ -9,7 +11,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_answer_number
-    return unless question.answers.count >= 4
+    return if question.answers.count < 5
 
     errors.add(:question, 'Number of answers must be between 1 and 4')
   end

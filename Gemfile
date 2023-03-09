@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -42,6 +44,12 @@ gem 'webpacker'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem 'devise', '~> 4.0'
+
+gem 'rubocop'
+
+gem 'rubocop-capybara', '~> 2.17', '>= 2.17.1'
+
+gem 'rubocop-rails', '~> 2.18'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

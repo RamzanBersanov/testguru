@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'digest/sha1'
 
 class User < ApplicationRecord
-
-  devise :database_authenticatable, 
+  devise :database_authenticatable,
          :registerable,
-         :recoverable, 
-         :rememberable, 
+         :recoverable,
+         :rememberable,
          :validatable
          :confirmable
 

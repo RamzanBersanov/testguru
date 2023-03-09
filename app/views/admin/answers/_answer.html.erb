@@ -1,9 +1,0 @@
-<tr>
-  <td><%= answer.body %></td><br>
-  <td><%= button_to 'Редактировать ответ', edit_admin_test_question_answer_url(@test, @question, answer), method: :get %></td>
-  <td><%= button_to 'Удалить ответ',
-                                    admin_test_question_answer_url(@test, @question, answer),
-                                    method: :delete,
-                                    data: { confirm: 'Are you sure?' } %>
-</tr>
-

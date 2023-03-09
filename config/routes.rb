@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'tests#index'
 
@@ -18,16 +20,15 @@ Rails.application.routes.draw do
     end
   end
 
-  
   namespace :admin do
     root 'tests#index'
   end
 
-  namespace :admin do 
-    resources :tests do
-      resources :questions do
-        resources :answers 
-      end 
-    end 
-  end 
+  namespace :admin do
+    resources :tests, only: %i[index show edit update new create destroy] do
+      resources :questions, only: %i[show edit update new create destroy], shallow: true do
+        resources :answers, only: %i[show edit update new create destroy], shallow: true
+      end
+    end
+  end
 end
