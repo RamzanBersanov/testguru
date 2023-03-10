@@ -18,11 +18,10 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = current_user
+    @test = current_user.tests.where(author_id: current_user.id).build(test_params)
 
     if @test.save
-      redirect_to admin_tests_url
+      redirect_to admin_test_url(@test)
     else
       render :new
     end
@@ -30,7 +29,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_tests_url
+      redirect_to admin_test_url(@test)
     else
       render :edit
     end
@@ -38,7 +37,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_url
+    redirect_to action: 'index'
   end
 
   private
