@@ -37,7 +37,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to action: 'index'
+    redirect_to admin_tests_url
   end
 
   private
