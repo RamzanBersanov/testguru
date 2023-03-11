@@ -1,0 +1,6 @@
+<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
+  <%= form.text_field :body %>
+  
+  <%= form.submit %>
+<% end %>

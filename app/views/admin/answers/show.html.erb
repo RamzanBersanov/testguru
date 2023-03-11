@@ -1,0 +1,9 @@
+<h1><%= @answer.body %></h1>
+
+<ul>
+  <li><%= link_to 'Редактировать ответ', edit_admin_answer_path(@answer) %></li><br>
+  <li><%= link_to 'Удалить ответ',
+                  admin_answer_path(@answer),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }  %></li>
+</ul>

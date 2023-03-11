@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -13,7 +15,7 @@ module TestGuru
 
     config.time_zone = 'Moscow'
 
-    config.logger = Logger.new(STDOUT)
+    config.logger = Logger.new($stdout)
 
     # Configuration for the application, engines, and railties goes here.
     #

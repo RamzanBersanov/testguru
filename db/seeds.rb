@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 users = User.create!([
-                       { name: 'Иван', email: 'ivan@mail.ru', password: '12345' },
-                       { name: 'Мага', email: 'maga@mail.ru', password: '67890' },
-                       { name: 'Руслан', email: 'rus@mail.ru', password: '11111' }
+                       { name: 'Иван', email: 'ivan@mail.ru', password: '123456' },
+                       { name: 'Мага', email: 'maga@mail.ru', password: '678900' },
+                       { name: 'Руслан', email: 'rus@mail.ru', password: '111111' },
+                       { name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admin@mail.ru',
+                         password: '111111', type: 'Admin' }
                      ])
 p "Created #{User.count} Users"
 

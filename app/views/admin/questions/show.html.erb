@@ -1,0 +1,11 @@
+<h1><%= @question.body %></h1>
+
+<ul>
+  <li><%= link_to 'Редактировать вопрос', edit_admin_question_path(@question) %></li><br>
+  <li><%= link_to 'Удалить вопрос',
+                  admin_question_path(@question),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }  %></li>
+
+<%= render 'back' %>
+

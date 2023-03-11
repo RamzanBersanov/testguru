@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
@@ -6,6 +8,7 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages
   has_many :questions, dependent: :destroy
 
+  validates :title, presence: true
   validates :title, uniqueness: { scope: :level, message: 'can only be one test with such title and level' }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
