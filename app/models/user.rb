@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable
-         :confirmable
+  :confirmable
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages

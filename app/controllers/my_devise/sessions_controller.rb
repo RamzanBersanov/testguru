@@ -3,4 +3,4 @@ class MyDevise::SessionsController < Devise::SessionsController
     super
     flash[:notice] = "Привет, #{resource.name}"
   end
-end 
+end
