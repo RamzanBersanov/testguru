@@ -4,8 +4,6 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[show edit update destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-
   def show; end
 
   def edit; end
@@ -48,9 +46,5 @@ class Admin::AnswersController < Admin::BaseController
 
   def find_answer
     @answer = Answer.find(params[:id])
-  end
-
-  def rescue_with_answer_not_found
-    render plain: 'Ответ не найден'
   end
 end

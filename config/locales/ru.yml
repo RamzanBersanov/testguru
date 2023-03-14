@@ -29,6 +29,7 @@ ru:
       title: "Название"
       level: "Уровень"
       category_id: "Категория"
+      action: 'Действие'
       questions:
         count: "Количество вопросов"
     start: 'Пройти тест'

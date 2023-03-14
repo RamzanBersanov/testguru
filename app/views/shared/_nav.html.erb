@@ -1,7 +1,14 @@
-<%= link_to "ТестГуру", tests_path %>
-
-<% if user_signed_in? %>
-    <p class="nav user">Добро пожаловать, <%= current_user.name %></b>Гуру!</p>
-    <%= link_to "Выйти из аккаунта", destroy_user_session_path,  method: :delete %>
-
-<% end %>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to "ТестГуру", tests_path, class: 'navbar-brand' %>
+  <span class="navbar-text">
+    <% if user_signed_in? && current_user.type == 'Admin' %>
+      <%= link_to "Панель управления администратора", admin_tests_path %>
+    <% end %>
+  </span>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Добро пожаловать, <b class="nav user-email"><%= current_user.name %></b> Гуру! |
+      <%= link_to "Выйти из аккаунта", destroy_user_session_path,  method: :delete %>
+    <% end %>
+  </span>
+</nav>

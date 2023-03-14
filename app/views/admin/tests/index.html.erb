@@ -1,9 +1,7 @@
 <h1><%= t('.header') %></h1>
-
 <p>
 <strong><%= link_to t('.create'), new_admin_test_path %></strong>
 </p>
-
 <table>
   <tr>
     <th><%= Test.human_attribute_name('title') %></th>
@@ -11,6 +9,5 @@
     <th><%= t('.questions_count') %></th>
     <th colspan='4'><%= t('.actions') %></th>
   </tr>
-  
   <%= render @tests %>
 </table>
