@@ -1,0 +1,38 @@
+---
+ru:
+  activerecord:
+    models:
+      test: Тест
+      test_passage: Прохождение теста
+      user: Пользователь
+      admin: Администратор
+    attributes:
+      test:
+        title: Название
+        level: Уровень
+        author: Автор
+        category_id: Категория
+        test_passage: прохождение теста
+        users: пользователи
+        questions: вопросы
+        passed: пройденный
+        easy: легкий
+        intermediate: средний
+        difficult: сложный
+      test_passage:
+        user_id: Пользователь
+        test_id: Тест
+        current_question_id: Текущий вопрос
+        correct_questions: Правильные вопросы
+      user:
+        name: Имя
+        email: Адрес эл. почты
+        password: Пароль
+        type: Пользователь
+        test_passages: Пройденные тесты
+        tests: Тесты
+        created_tests: Созданные тесты
+      admin:
+        first_name: Имя
+        last_name: Фамилия
+        type: Администратор

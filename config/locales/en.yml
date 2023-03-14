@@ -1,33 +1,112 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  test_level:
+      easy: 'easy'
+      intermediate: 'intermediate'
+      difficult: 'difficult'
+  helpers: 
+    select:
+      prompt: 'Choose: '
+    submit:
+      test:
+        create: "Create a test"
+        submit: "Save %{model}"
+        update: "Update the test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+  tests:
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      level: "Level"
+      category_id: "Category"
+      questions:
+        count: "Questions count"
+    start: 'Start the test'
+  test_passages:
+    result: 
+      header: "The %{title} Test was completed!"
+      back: 'Back to the test list'
+      correct_questions: "The number of correct questions: %{correct_questions}"
+      correct_percentage: "%{correct_percentage}% of correct questions is given"
+      success: "%{user_name}, you have passed test."
+      failure: "%{user_name}, you have not passed test."
+    show:
+      header: 'To pass the %{test_title} test'
+      all_questions: 'There are %{all_questions} questions overall'
+  admin:
+    tests:
+      index:
+        header: "Tricky tests"
+        questions_count: 'The questions count'
+        actions: 'Actions'
+        create: 'Create new test'
+      create:
+        success: "The test was successfully created"
+      update:
+        success: "The test is successfully edited"
+      edit: 
+        header: 'Edit the %{title} test'
+      destroy:
+        deleted: 'The test is deleted'
+      back: 
+        back: 'Back to test'
+      test:
+        show_test: 'Show test'
+        edit_test: 'Edit test'
+        delete_test: 'Delete test'
+        are_you_sure: Are you sure?
+      new:
+        header: 'Create new test'
+      show:
+        create_question: 'Create a new question'
+      form:
+        prompt: 'Choose the category:'
+  tests_mailer:
+    completed_test: 
+      subject: "You have successfully completed the TestGuru Test"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      model_invalid: 'Validation failed: %{errors}'
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      required: must exist
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is %{count} character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is %{count} character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be %{count} character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: "%{count} error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"

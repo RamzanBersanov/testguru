@@ -1,21 +1,22 @@
 <p>
-  <strong>Название:</strong>
+  <strong><%= Test.human_attribute_name('title') %></strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <strong>Уровень:</strong>
+  <strong><%= Test.human_attribute_name('level') %></strong>
   <%= @test.level %>
 </p>
 
 <p>
-  <strong>Автор:</strong>
+  <strong><%= Test.human_attribute_name('author') %></strong>
   <%= @test.author.name %>
 </p>
 
 <p>
-  <strong><%= link_to "Создать новый вопрос", new_admin_test_question_path(test_id: @test.id) %></strong>
+  <strong><%= link_to t('.create_question'), new_admin_test_question_path(test_id: @test.id) %></strong>
 </p>
 
+<%= render 'back' %>
 
-<%= link_to 'Назад к тестам', admin_tests_path %>
+

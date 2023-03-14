@@ -9,7 +9,7 @@ ru:
         current_password: Текущий пароль
         current_sign_in_at: Дата текущего входа
         current_sign_in_ip: IP текущего входа
-        email: Email
+        email: Адрес эл. почты
         encrypted_password: Зашифрованный пароль
         failed_attempts: Неудачные попытки
         last_sign_in_at: Дата последнего входа
@@ -32,6 +32,20 @@ ru:
         one: Пользователь
         other: Пользователи
   devise:
+    shared:
+      links:
+        back: Назад!
+        didn_t_receive_confirmation_instructions: Не получили подтверждение?
+        didn_t_receive_unlock_instructions: Не получили код разблокировки?
+        forgot_your_password: Забыли пароль?
+        sign_in: Войти
+        sign_in_with_provider: 'Войти с помощью: %{provider}'
+        sign_up: Регистрация
+      minimum_password_length:
+        few: "(минимум %{count} знака)"
+        many: "(минимум %{count} знаков)"
+        one: "(минимум %{count} знак)"
+        other: "(минимум %{count} знаков)"
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.
       new:
@@ -116,23 +130,9 @@ ru:
     sessions:
       already_signed_out: Выход из системы уже выполнен.
       new:
-        sign_in: Войти
+        sign_in: 'Войти'
       signed_in: Привет!
       signed_out: Выход из системы выполнен.
-    shared:
-      links:
-        back: Назад
-        didn_t_receive_confirmation_instructions: Не получили подтверждение?
-        didn_t_receive_unlock_instructions: Не получили код разблокировки?
-        forgot_your_password: Забыли пароль?
-        sign_in: Войти
-        sign_in_with_provider: 'Войти с помощью: %{provider}'
-        sign_up: Регистрация
-      minimum_password_length:
-        few: "(минимум %{count} знака)"
-        many: "(минимум %{count} знаков)"
-        one: "(минимум %{count} знак)"
-        other: "(минимум %{count} знаков)"
     unlocks:
       new:
         resend_unlock_instructions: Выслать подтверждение заново
