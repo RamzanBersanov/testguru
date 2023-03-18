@@ -11,7 +11,6 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level, message: 'can only be one test with such title and level' }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
-  validates :category_id, presence: true
 
   scope :passed, ->(test_level) { where(level: test_level) }
   scope :easy, -> { where(level: 0..1) }

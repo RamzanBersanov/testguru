@@ -9,6 +9,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admin_required!
-    redirect_to root_path, alert: 'Страница доступна только администраторам' unless current_user.is_a?(Admin)
+    redirect_to root_path, warning: 'Страница доступна только администраторам' unless current_user.is_a?(Admin)
   end
 end
