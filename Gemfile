@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.3'
 
+gem 'dotenv-rails', groups: %i[development test]
+
 gem 'sassc-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 6.0.0'
@@ -35,6 +37,10 @@ gem 'jbuilder'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+gem 'octokit', '~> 5.0'
+
+gem 'sawyer'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
@@ -47,9 +53,11 @@ gem 'webpacker'
 # gem "image_processing", "~> 1.2"
 gem 'devise', '~> 4.0'
 
-gem 'jquery-rails'
 gem 'bootstrap', '~> 5.2.2'
+gem 'jquery-rails'
 gem 'sprockets-rails', '~>2.3.2'
+
+gem 'faraday'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
