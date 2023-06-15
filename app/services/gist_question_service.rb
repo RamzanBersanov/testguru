@@ -1,10 +1,8 @@
 class GistQuestionService
-  # ACCESS_TOKEN = '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'
-
-  def initialize(question, client: nil)
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+    @client = client
   end
 
   def call
@@ -12,6 +10,10 @@ class GistQuestionService
   end
 
   private
+
+  def default_client
+    Octokit::Client.new(access_token: ENV['GITHUB_ACCESS_TOKEN'])
+  end
 
   def gist_params
     {

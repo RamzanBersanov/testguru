@@ -28,10 +28,12 @@ ActiveRecord::Schema.define(version: 20_230_528_165_054) do
 
   create_table 'gists', force: :cascade do |t|
     t.string 'gist_url'
-    t.string 'creator_email'
-    t.text 'question_body'
+    t.integer 'user_id', null: false
+    t.integer 'question_id', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.index ['question_id'], name: 'index_gists_on_question_id'
+    t.index ['user_id'], name: 'index_gists_on_user_id'
   end
 
   create_table 'questions', force: :cascade do |t|
@@ -89,6 +91,8 @@ ActiveRecord::Schema.define(version: 20_230_528_165_054) do
   end
 
   add_foreign_key 'answers', 'questions', on_delete: :cascade
+  add_foreign_key 'gists', 'questions'
+  add_foreign_key 'gists', 'users'
   add_foreign_key 'questions', 'tests', on_delete: :cascade
   add_foreign_key 'test_passages', 'questions', column: 'current_question_id'
   add_foreign_key 'test_passages', 'tests'

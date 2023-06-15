@@ -22,22 +22,17 @@ class TestPassagesController < ApplicationController
   def gist
     @result = GistQuestionService.new(@test_passage.current_question).call
 
-    @gist_url = @result['html_url']
-
-    @gist_for_table = Gist.new(
-      creator_email: current_user.email,
-      question_body: @test_passage.current_question.body,
-      gist_url: @gist_url
-    )
-
-    @gist_for_table.save
+    @gist = Gist.new(gist_url: @result['html_url'])
+    @gist.user = current_user
+    @gist.question = @test_passage.current_question
+    @gist.save
 
     if @result.nil?
       flash_options = { alert: t('.failure') }
     else
       flash_options = { notice: t('.success',
-                                  link: view_context.link_to('gist', @gist_url.html_safe, target: '_blank',
-                                                                                          rel: 'nofollow', rel: 'nofollow')) }
+                                  link: view_context.link_to('gist', @result['html_url'].html_safe, target: '_blank',
+                                                                                                    rel: 'nofollow', rel: 'nofollow')) }
     end
 
     redirect_to @test_passage, flash_options
