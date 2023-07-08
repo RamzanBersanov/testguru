@@ -24,6 +24,10 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+  gists:
+    create:
+      success: "Гист %{link} успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
   tests:
     index:
       header: "Тесты проекта"
@@ -45,9 +49,6 @@ ru:
     show:
       header: 'Пройти тест %{test_title}'
       all_questions: 'Всего вопросов в тесте %{all_questions}'
-    gist:
-      success: "Gist %{link} успешно сохранен"
-      failure: "Во время сохранения gist произошла ошибка"
   admin:
     gists:
       index:

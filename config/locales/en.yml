@@ -22,6 +22,10 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+  gist:
+    create:
+      success: "Gist %{link} was created successfully"
+      failure: "Error occurred when creating gist"
   tests:
     index:
       header: "Tricky tests"
@@ -43,9 +47,6 @@ en:
     show:
       header: 'To pass the %{test_title} test'
       all_questions: 'There are %{all_questions} questions overall'
-    gist:
-      success: "Gist %{link} was created successfully"
-      failure: "Error occurred when creating gist"
   admin:
     gists:
       index:
