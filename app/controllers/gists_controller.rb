@@ -2,13 +2,10 @@ class GistsController < ApplicationController
   before_action :set_test_passage, only: :create
   before_action :authenticate_user!
 
-  def gist_url
-    @result = GistQuestionService.new(@test_passage.current_question).call
-    gist_url = @result['html_url']
-  end
-
   def create
-    @gist = current_user.gists.build(gist_url: gist_url, question_id: @test_passage.current_question.id)
+    @result = GistQuestionService.new(@test_passage.current_question).call
+
+    @gist = current_user.gists.build(gist_url: @result['html_url'], question_id: @test_passage.current_question.id)
 
     if @gist.save
       flash_options = { notice: t('.success',
