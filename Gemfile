@@ -37,8 +37,6 @@ gem 'jbuilder'
 
 gem 'octokit', '~> 5.0'
 
-gem 'sawyer'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
