@@ -1,0 +1,5 @@
+<tr>
+  <td><%= gist.user.email %></td><br>
+  <td><%= gist.question.body[0..25] %></td><br>
+  <td><%= link_to gist.gist_url, gist.gist_url.html_safe, target: '_blank', rel: 'nofollow', rel: 'nofollow'%></td><br>
+</tr>

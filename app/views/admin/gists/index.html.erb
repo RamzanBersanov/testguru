@@ -1,0 +1,14 @@
+<div class="row justify-content-center mt-3">
+  <h1><%= t('.header') %></h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.creator_email') %></th>
+          <th scope="col"><%= t('.question_body') %></th>
+          <th scope="col"><%= t('.gist_url') %></th>
+        </tr>
+      </thead>
+      <%= render @gists %>
+    </table>
+  </div>
+</div>

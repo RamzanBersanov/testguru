@@ -1,5 +1,6 @@
 ---
 ru:
+  gist_description: "Вопрос из теста %{test_title} из TestGuru"
   test_level:
       easy: 'легкий'
       intermediate: 'средний'
@@ -23,6 +24,10 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+  gists:
+    create:
+      success: "Гист %{link} успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
   tests:
     index:
       header: "Тесты проекта"
@@ -45,6 +50,11 @@ ru:
       header: 'Пройти тест %{test_title}'
       all_questions: 'Всего вопросов в тесте %{all_questions}'
   admin:
+    gists:
+      index:
+        header: "Гисты пользователей"
+        creator_email: "Эл. почта пользователя"
+        question_body: "Содержание вопроса"
     tests:
       index:
         header: "Тесты проекта"

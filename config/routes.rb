@@ -19,10 +19,16 @@ Rails.application.routes.draw do
     member do
       get :result
     end
+    resources :gists, only: :create
   end
+
 
   namespace :admin do
     root 'tests#index'
+  end
+
+  namespace :admin do
+    resources :gists, only: :index
   end
 
   namespace :admin do
