@@ -5,7 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.3'
 
-gem 'sassc-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 6.0.0'
 
@@ -22,6 +21,8 @@ gem 'puma', '~> 5.0'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbolinks'
+
+gem 'webpacker'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
@@ -40,10 +41,8 @@ gem 'octokit', '~> 5.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-gem 'webpacker'
-
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -51,6 +50,7 @@ gem 'devise', '~> 4.0'
 
 gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
+gem 'octicons_helper'
 gem 'sprockets-rails', '~>2.3.2'
 
 group :development, :test do
