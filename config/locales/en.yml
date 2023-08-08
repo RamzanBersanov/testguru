@@ -80,6 +80,8 @@ en:
         create_question: 'Create a new question'
       form:
         prompt: 'Choose the category:'
+      form_inline:
+        submit: 'OK'
   tests_mailer:
     completed_test: 
       subject: "You have successfully completed the TestGuru Test"
