@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tests, only: %i[index show edit update new create destroy] do
+      patch :update_inline, on: :member
       resources :questions, only: %i[show edit update new create destroy], shallow: true do
         resources :answers, only: %i[show edit update new create destroy], shallow: true
       end

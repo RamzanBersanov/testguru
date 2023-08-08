@@ -82,6 +82,8 @@ ru:
         create_question: 'Создать новый вопрос'
       form:
         prompt: 'Выберите категорию:'
+      form_inline:
+        submit: 'ОК'
   tests_mailer:
     completed_test: 
       subject: "Вы успешно завершили тест на TestGuru"

@@ -4,6 +4,8 @@
 <strong><%= link_to t('.create'), new_admin_test_path %></strong>
 </p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table">
   <tbody>
     <tr>

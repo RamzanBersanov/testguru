@@ -9,12 +9,9 @@ document.addEventListener('turbolinks:load', function() {
 function sortRowsByTitle() {
   var table = document.querySelector('table')
 
-  // Nodelist
-  // https://developer.mozilla.org/ru/docs/Web/API/NodeList
   var rows = table.querySelectorAll('tr')
   var sortedRows = []
 
-  // select all table rows except the first one which is header
   for (var i = 1; i < rows.length; i++) {
     sortedRows.push(rows[i])
   }
@@ -35,18 +32,13 @@ function sortRowsByTitle() {
 
   sortedTable.classList.add('table')
 
-  // Move the arrow classes modification code above
-
-  // было sortedTable.appendChild(rows[0])
   thead.appendChild(table.querySelector('tr')) 
   sortedTable.appendChild(thead)
 
   for (var i = 0; i < sortedRows.length; i++) {
-    // было sortedTable.appendChild(sortedRows[i])
     tbody.appendChild(sortedRows[i])
   }
 
-  // добавлено
   sortedTable.appendChild(tbody)
 
   table.parentNode.replaceChild(sortedTable, table)
