@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module User
+module Us
   module Auth
     EMAIL = /\A[\w+\-.]+@[a-z\d-]+(\.[a-z]+)*\.[a-z]+\z/.freeze
 
