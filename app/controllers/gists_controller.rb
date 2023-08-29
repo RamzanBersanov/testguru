@@ -9,7 +9,7 @@ class GistsController < ApplicationController
       current_user.gists.build(gist_url: @result.html_url, question_id: @test_passage.current_question.id)
       flash_options = { notice: t('.success',
                                   link: view_context.link_to('gist', @result.html_url.html_safe, target: '_blank',
-                                                                                                 rel: 'nofollow', rel: 'nofollow')) }
+                                                                                                 rel: 'nofollow')) }
     else
       flash_options = { alert: t('.failure') }
     end
