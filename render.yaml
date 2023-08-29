@@ -14,4 +14,8 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-  - plan: free
+  - type: redis
+    name: redis
+    ipAllowList: []
+    plan: free
+    maxmemoryolicy: noeviction
