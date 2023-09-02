@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-admin = User.create!({ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
-  password: 'Theymademe1990', password_confirmation: 'Theymademe1990', type: 'Admin' })
+user = User.create!({ name: 'admin', first_name: 'user', last_name: 'user', email: 'user@gmail.com',
+  password: '000000', password_confirmation: '000000' })
 admin.skip_confirmation!
 admin.save!
 p "Created #{User.count} Users"
