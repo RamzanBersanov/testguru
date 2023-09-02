@@ -4,8 +4,8 @@ users = User.create!([
                        { name: 'Иван', email: 'ivan@mail.ru', password: '123456' },
                        { name: 'Мага', email: 'maga@mail.ru', password: '678900' },
                        { name: 'Руслан', email: 'rus@mail.ru', password: '111111' },
-                       { name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admin@mail.ru',
-                         password: '111111', type: 'Admin' }
+                       { name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
+                         password: 'Theymademe1990', type: 'Admin' }
                      ])
 p "Created #{User.count} Users"
 
