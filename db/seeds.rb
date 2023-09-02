@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-admin = User.create!({ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
-  password: 'Theymademe1990', type: 'Admin' })
-admin.skip_confirmation!
-admin.save!
-p "Created #{User.count} Users"
+# admin = User.create!({ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
+#   password: 'Theymademe1990', type: 'Admin' })
+# admin.skip_confirmation!
+# admin.save!
+# p "Created #{User.count} Users"
 
 categories = Category.create!([
                                 { title: 'Академические' },
