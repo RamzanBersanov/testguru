@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :gists, only: :create
   end
 
+  resources :contacts, only: [:new, :create]
 
   namespace :admin do
     root 'tests#index'

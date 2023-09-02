@@ -10,6 +10,7 @@ gem 'rails', '~> 6.0.0'
 
 gem 'rails-i18n', '~> 6.0.0'
 
+gem 'mail_form'
 # Use pg as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 

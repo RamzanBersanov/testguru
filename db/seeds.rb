@@ -2,9 +2,6 @@
 
 user = User.create!({ name: 'admin', first_name: 'user', last_name: 'user', email: 'usermuser@gmail.com',
   password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc })
-# user.skip_confirmation!
-# user.skip_confirmation_notification!
-# user.save!
 p "Created #{User.count} Users"
 
 categories = Category.create!([
