@@ -72,14 +72,14 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true  }
 
-    # ActionMailer::Base.smtp_settings = {
-    #   :port           => 587,
-    #   :address        => 'smtp.gmail.com',
-    #   :user_name      => ENV['SMTP_USERNAME'],
-    #   :password       => ENV['SMTP_PASSWORD'],
-    #   :authentication => :plain,
-    # }
-    # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => ENV['MAILGUN_SMTP_PORT'],
+  #   :address        => 'smtp.gmail.com',
+  #   :user_name      => ENV['SMTP_USERNAME'],
+  #   :password       => ENV['SMTP_PASSWORD'],
+  #   :authentication => :plain,
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
