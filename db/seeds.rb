@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
-#                          password: 'Theymademe1990', type: 'Admin' }
-#                      ])
 admin = User.create!({ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
   password: 'Theymademe1990', type: 'Admin' })
 admin.skip_confirmation!
