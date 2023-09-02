@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-# admin = User.create!({ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
-#   password: 'Theymademe1990', type: 'Admin' })
-# admin.skip_confirmation!
-# admin.save!
-# p "Created #{User.count} Users"
+admin = User.create!({ name: 'admin', first_name: 'Admin', last_name: 'Admin', email: 'admfortests@gmail.com',
+  password: 'Theymademe1990', type: 'Admin' })
+admin.skip_confirmation!
+admin.save!
+p "Created #{User.count} Users"
 
 categories = Category.create!([
                                 { title: 'Академические' },
@@ -13,12 +13,12 @@ categories = Category.create!([
 p "Created #{Category.count} Categories"
 
 tests = Test.create!([
-                       { title: 'История-1', level: '1', author: admin, category: categories[0] },
-                       { title: 'История-2', level: '2', author: admin, category: categories[0] },
-                       { title: 'География-1', level: '3', author: admin, category: categories[0] },
-                       { title: 'География-2', level: '4', author: admin, category: categories[0] },
-                       { title: 'Логика-1', level: '5', author: admin, category: categories[1] },
-                       { title: 'Логика-2', level: '6', author: admin, category: categories[1] }
+                       { title: 'История-1', level: '1', author: users[0], category: categories[0] },
+                       { title: 'История-2', level: '2', author: users[0], category: categories[0] },
+                       { title: 'География-1', level: '3', author: users[0], category: categories[0] },
+                       { title: 'География-2', level: '4', author: users[0], category: categories[0] },
+                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1] },
+                       { title: 'Логика-2', level: '6', author: users[0], category: categories[1] }
                      ])
 p "Created #{Test.count} Tests"
 
@@ -91,7 +91,7 @@ Answer.create!([
                ])
 p "Created #{Answer.count} Answers"
 
-TestPassage.create(test: tests[0], user: admin)
-TestPassage.create(test: tests[1], user: admin)
-TestPassage.create(test: tests[2], user: admin)
-TestPassage.create(test: tests[3], user: admin)
+TestPassage.create(test: tests[0], user: users[0])
+TestPassage.create(test: tests[1], user: users[0])
+TestPassage.create(test: tests[2], user: users[0])
+TestPassage.create(test: tests[3], user: users[0])
