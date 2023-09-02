@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 user = User.create!({ name: 'admin', first_name: 'user', last_name: 'user', email: 'user@gmail.com',
-  password: '000000', password_confirmation: '000000' })
-admin.skip_confirmation!
-admin.save!
+  password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc })
+# user.skip_confirmation!
+# user.skip_confirmation_notification!
+# user.save!
 p "Created #{User.count} Users"
 
 categories = Category.create!([
@@ -13,12 +14,12 @@ categories = Category.create!([
 p "Created #{Category.count} Categories"
 
 tests = Test.create!([
-                       { title: 'История-1', level: '1', author: users[0], category: categories[0] },
-                       { title: 'История-2', level: '2', author: users[0], category: categories[0] },
-                       { title: 'География-1', level: '3', author: users[0], category: categories[0] },
-                       { title: 'География-2', level: '4', author: users[0], category: categories[0] },
-                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1] },
-                       { title: 'Логика-2', level: '6', author: users[0], category: categories[1] }
+                       { title: 'История-1', level: '1', author: user, category: categories[0] },
+                       { title: 'История-2', level: '2', author: user, category: categories[0] },
+                       { title: 'География-1', level: '3', author: user, category: categories[0] },
+                       { title: 'География-2', level: '4', author: user, category: categories[0] },
+                       { title: 'Логика-1', level: '5', author: user, category: categories[1] },
+                       { title: 'Логика-2', level: '6', author: user, category: categories[1] }
                      ])
 p "Created #{Test.count} Tests"
 
@@ -91,7 +92,7 @@ Answer.create!([
                ])
 p "Created #{Answer.count} Answers"
 
-TestPassage.create(test: tests[0], user: users[0])
-TestPassage.create(test: tests[1], user: users[0])
-TestPassage.create(test: tests[2], user: users[0])
-TestPassage.create(test: tests[3], user: users[0])
+TestPassage.create(test: tests[0], user: user)
+TestPassage.create(test: tests[1], user: user)
+TestPassage.create(test: tests[2], user: user)
+TestPassage.create(test: tests[3], user: user)
