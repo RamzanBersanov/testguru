@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GistsController < ApplicationController
   before_action :set_test_passage, only: :create
   before_action :authenticate_user!

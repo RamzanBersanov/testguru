@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   def initialize(question, client = default_client)
     @question = question
@@ -9,7 +11,7 @@ class GistQuestionService
 
   def call
     result = @client.create_gist(gist_params)
-    response_info = Response.new(result.present?, result.html_url)
+    Response.new(result.present?, result.html_url)
   end
 
   private
@@ -20,7 +22,7 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "#{I18n.t('.gist_description', test_title: @test.title)}",
+      description: I18n.t('.gist_description', test_title: @test.title).to_s,
       files: {
         'test-guru-question.txt' => {
           content: gist_content
