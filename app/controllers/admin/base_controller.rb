@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
-module Admin
-  class BaseController < ApplicationController
-    layout 'admin'
+class Admin::BaseController < ApplicationController
+  layout 'admin'
 
-    before_action :authenticate_user!
-    before_action :admin_required!
+  before_action :authenticate_user!
+  before_action :admin_required!
 
-    private
+  private
 
-    def admin_required!
-      redirect_to root_path, warning: 'Страница доступна только администраторам' unless current_user.is_a?(Admin)
-    end
+  def admin_required!
+    redirect_to root_path, warning: 'Страница доступна только администраторам' unless current_user.is_a?(Admin)
   end
 end
+
