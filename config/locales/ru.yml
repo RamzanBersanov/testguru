@@ -2,13 +2,15 @@
 ru:
   gist_description: "Вопрос из теста %{test_title} из TestGuru"
   test_level:
-      easy: 'легкий'
-      intermediate: 'средний'
-      difficult: 'сложный'
+    easy: 'легкий'
+    intermediate: 'средний'
+    difficult: 'сложный'
   helpers:
     select:
       prompt: 'Выберите: '
     submit:
+      contact:
+        create: 'Отправить'
       create: Создать %{model}
       submit: Сохранить %{model}
       update: Сохранить %{model}
@@ -17,6 +19,10 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      contact:
+        name: 'Имя'
+        email: 'Электронная почта'
+        message: 'Сообщение'
   shared:
     errors:
       header:
@@ -28,6 +34,10 @@ ru:
     create:
       success: "Гист %{link} успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"
+  contacts:
+    new:
+      header: 'Контактная форма'
+      placeholder: "Ваше сообщение"
   tests:
     index:
       header: "Тесты проекта"

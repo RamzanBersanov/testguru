@@ -8,6 +8,8 @@ en:
     select:
       prompt: 'Choose: '
     submit:
+      contact:
+        create: 'Send message'
       test:
         create: "Create a test"
         submit: "Save %{model}"
@@ -17,6 +19,10 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      contact:
+        name: 'Name'
+        email: 'Email'
+        message: 'Message'
   shared:
     errors:
       header:
@@ -26,6 +32,10 @@ en:
     create:
       success: "Gist %{link} was created successfully"
       failure: "Error occurred when creating gist"
+  contacts:
+    new:
+      header: 'Contact form'
+      placeholder: "Your message"
   tests:
     index:
       header: "Tricky tests"
