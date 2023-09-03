@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
+  resources :contacts, only: [:new, :create]
+  
   resources :test_passages, only: %i[show update] do
     member do
       get :result
