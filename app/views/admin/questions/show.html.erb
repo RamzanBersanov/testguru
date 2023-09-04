@@ -1,7 +1,14 @@
 <h1><%= @question.body %></h1>
 
+<ul>Ответы:
+  <% @question.answers.each do |answer| %>
+    <li><%=answer.body%></li>
+  <% end %>
+</ul>
+
 <ul>
-  <li><%= link_to 'Редактировать вопрос', edit_admin_question_path(@question) %></li><br>
+  <li><%= link_to 'Редактировать вопрос', edit_admin_question_path(@question) %></li>
+  <li><%= link_to 'Добавить ответ', new_admin_question_answer_path(question_id: @question.id) %></li>
   <li><%= link_to 'Удалить вопрос',
                   admin_question_path(@question),
                   method: :delete,

@@ -1,14 +1,14 @@
 document.addEventListener('turbolinks:load', function() {
 
-    let questionNumber = $('.question-number').data('current')
-    let questionsCount = $('.questions-count').data('all')
-    let progressBar = $('.progress-bar')
+    const questionNumber = $('.question-number').data('current')
+    const questionsCount = $('.questions-count').data('all')
+    const progressBar = $('.progress-bar')
 
     findProgressPercent(questionNumber, questionsCount)
 })
 
 function findProgressPercent(questionNumber, questionsCount) {
-    let progressPercent = (questionNumber / questionsCount * 100).toFixed(1)
+    const progressPercent = (questionNumber / questionsCount * 100).toFixed(1)
     styleProgressBar(progressPercent)
 }
 

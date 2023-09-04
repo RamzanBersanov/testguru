@@ -12,3 +12,4 @@ class Admin::BaseController < ApplicationController
     redirect_to root_path, warning: 'Страница доступна только администраторам' unless current_user.is_a?(Admin)
   end
 end
+
