@@ -19,7 +19,6 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
-        countdown: 'Время прохождения теста в минутах'
       contact:
         name: 'Имя'
         email: 'Электронная почта'
@@ -76,7 +75,6 @@ ru:
       header: 'Пройти тест %{test_title}'
       all_questions: 'Всего вопросов в тесте %{all_questions}'
       progress_bar: Ваш прогресс
-      time_left: Оставшееся время
       gist_question: Сохранить гист с вопросом
   badges:
     index:
@@ -135,7 +133,6 @@ ru:
         title: Название
         level: Уровень
         questions_count: 'Количество вопросов'
-        countdown: Время прохождения теста в минутах
         actions: 'Действия'
       create: 
         success: "Тест успешно создан"
@@ -216,7 +213,6 @@ ru:
         title: Название
         level: Уровень
         author: Автор
-        countdown: Время прохождения в минутах
       badge:
         title: Название
         picture: Изображение 

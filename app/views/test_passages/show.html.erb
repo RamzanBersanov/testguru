@@ -11,11 +11,6 @@
   </div> 
 </p>
 
-<p class="timer", data-end-time="<%= @test_passage.test.end_time %>"></p> 
-<p><%= t('.time_left') %>: 
-  <div id='result'></div> 
-</p>
-
 <b class='question-number', data-current="<%=@test_passage.question_number.to_f%>">
   <%= "#{@test_passage.question_number}." %>
   <%= @test_passage.current_question.body %>

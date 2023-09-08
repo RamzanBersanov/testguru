@@ -19,7 +19,6 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
-        countdown: Time to pass
       contact:
         name: 'Name'
         email: 'Email'
@@ -74,7 +73,6 @@ en:
       header: 'To pass the %{test_title} test'
       all_questions: 'There are %{all_questions} questions overall'
       progress_bar: Your progress
-      time_left: Time left
       gist_question: Gist question
   badges:
     index:
@@ -131,7 +129,6 @@ en:
         header: "Tricky tests"
         title: Title
         level: Level
-        countdown: Time to pass test in minutes
         questions_count: 'The questions count'
         actions: 'Actions'
         create: 'Create new test'
@@ -206,7 +203,6 @@ en:
         title: Title
         level: Level
         author: Author
-        countdown: Time to pass test in minutes
       badge:
         title: Название
         picture: Изображение 

@@ -13,12 +13,12 @@ categories = Category.create!([
 p "Created #{Category.count} Categories"
 
 tests = Test.create!([
-                       { title: 'История-1', level: '1', author: users[0], category: categories[0], countdown: 3 },
-                       { title: 'История-2', level: '2', author: users[0], category: categories[0], countdown: 3 },
-                       { title: 'География-1', level: '3', author: users[0], category: categories[0], countdown: 3 },
-                       { title: 'География-2', level: '4', author: users[0], category: categories[0], countdown: 3 },
-                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1], countdown: 3 },
-                       { title: 'Логика-2', level: '6', author: users[0], category: categories[1], countdown: 3 }
+                       { title: 'История-1', level: '1', author: users[0], category: categories[0] },
+                       { title: 'История-2', level: '2', author: users[0], category: categories[0] },
+                       { title: 'География-1', level: '3', author: users[0], category: categories[0] },
+                       { title: 'География-2', level: '4', author: users[0], category: categories[0] },
+                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1] },
+                       { title: 'Логика-2', level: '6', author: users[0], category: categories[1] }
                      ])
 p "Created #{Test.count} Tests"
 
