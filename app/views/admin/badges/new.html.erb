@@ -1,0 +1,17 @@
+<h1>Создать бейдж</h1>
+
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+  
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+    
+  <%= form.label :picture %>     
+  <%= form.select :picture, {"За легкие" => 'third.jpg', 
+                            "За средней сложности" => 'second.jpg',
+                            "За сложные" => 'first.jpg',
+                            "За логические" => 'logic.png',
+                            "За академические" => 'academic.png'} %>
+
+  <%= form.submit %>
+<% end %>

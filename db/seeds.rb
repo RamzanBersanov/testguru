@@ -6,6 +6,15 @@ users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', 
                       password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
 p "Created #{User.count} Users"
 
+badges = Badge.create!([
+  { user: users[1], title: 'for_easy', picture: 'third.jpg' },
+  { user: users[1], title: 'for_intermediate', picture: 'second.jpg' },
+  { user: users[1], title: 'for_difficult', picture: 'first.jpg' },
+  { user: users[1], title: 'for_academic', picture: 'academic.png' },
+  { user: users[1], title: 'for_logic', picture: 'logic.png' }
+])
+p "Created #{Badge.count} Badges"
+
 categories = Category.create!([
                                 { title: 'Академические' },
                                 { title: 'Логические' }

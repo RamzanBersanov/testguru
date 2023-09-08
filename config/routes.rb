@@ -40,14 +40,14 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
-    resources :badges, only: %i[index show create destroy] 
+    resources :badges, only: %i[index show new create destroy] 
   end
   
   namespace :admin do
     resources :tests, only: %i[index show edit update new create destroy] do
       patch :update_inline, on: :member
-      resources :questions, only: %i[index show edit update new create destroy], shallow: true do
-        resources :answers, only: %i[index show edit update new create destroy], shallow: true
+      resources :questions, only: %i[show edit update new create destroy], shallow: true do
+        resources :answers, only: %i[show edit update new create destroy], shallow: true
       end
     end
   end
