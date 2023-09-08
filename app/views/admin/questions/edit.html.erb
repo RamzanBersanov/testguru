@@ -9,4 +9,8 @@
   <%= form.submit %>
 <% end %>
 
+<p>
+  <strong><%= link_to t('.see_answers'), admin_question_answers_path(question_id: @question.id) %></strong>
+</p>
+
 <%= render 'back' %>

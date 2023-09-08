@@ -1,0 +1,18 @@
+<h1><%= t('.header', test_title: @test.title) %></h1>
+
+<p>
+    <strong><%= link_to t('.create_question'), new_admin_test_question_path(test_id: @test.id) %></strong>
+</p>
+
+<%= render 'shared/errors', resource: @test %>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= t('.question') %></th>
+      <th colspan='2'><%= t('.actions') %></th>
+    </tr>
+    
+    <%= render @questions %>
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+<tr>
+  <td class="align-middle"><%= answer.body %></td><br>
+  <td class="align-middle"><%= answer.correct %></td><br>
+  <td class="align-middle"><%= link_to t('.edit_answer'), edit_admin_answer_path(answer) %></td><br>
+  <td class="align-middle">
+    <%= link_to t('.delete_answer'),
+                  admin_answer_path(answer),
+                  method: :delete,
+                  data: { confirm: t('.are_you_sure') } %>
+  </td><br>
+</tr>

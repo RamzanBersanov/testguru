@@ -3,5 +3,10 @@
   <%= form.label :body %>
   <%= form.text_field :body %>
 
+  <%= form.label :correct %>     
+  <%= form.select :correct, {"Да" => true, "Нет" => false} %>
+
   <%= form.submit %>
 <% end %>
+
+

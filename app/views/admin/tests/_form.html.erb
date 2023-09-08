@@ -14,6 +14,11 @@
   <p>
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: t('.prompt') %>
+  </p>  
+  
+  <p>
+    <%= form.label :countdown %>
+    <%= form.number_field :countdown, id: :countdown %>
   </p>
 
   <p><%= form.submit %></p>

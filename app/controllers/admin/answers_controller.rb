@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class Admin::AnswersController < Admin::BaseController
-  before_action :find_question, only: %i[new create]
+  before_action :find_question, only: %i[index new create]
   before_action :find_answer, only: %i[show edit update destroy]
 
+  def index
+    @answers = @question.answers
+  end
+  
   def show; end
 
   def edit; end
@@ -41,7 +45,7 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def answer_params
-    params.require(:answer).permit(:body)
+    params.require(:answer).permit(:body, :correct)
   end
 
   def find_answer
