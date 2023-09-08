@@ -5,13 +5,6 @@
       <%= link_to t('.admin_panel'), admin_tests_path %>
     <% end %>
   </span class="navbar-text">
-  <span>
-    <% if user_signed_in? %>
-      <p><%= link_to t('.all_badges'), all_badges_path, target: '_blank', rel: 'nofollow'%></p> 
-      <p><%= link_to t('.user_badges'), user_badges_path(user_id: current_user.id), target: '_blank',
-                                                                              rel: 'nofollow'%></p> 
-    <% end %>
-  </span>
   <span class="navbar-text">
     <% if user_signed_in? %>
       <b class="nav user-email"><%= t('.greeting', current_user_name: current_user.name) %></b> |

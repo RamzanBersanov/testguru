@@ -41,8 +41,6 @@ ru:
         other: "Обнаружено %{count} ошибки"
     nav: 
       testguru: ТестГуру
-      all_badges: 'Все награды'
-      user_badges: 'Мои награды'
       admin_panel: Панель Администратора 
       greeting: "Добро пожаловать, %{current_user_name} Гуру!"
       logout: Выйти из аккаунта
@@ -78,13 +76,6 @@ ru:
       progress_bar: Ваш прогресс
       time_left: Оставшееся время
       gist_question: Сохранить гист с вопросом
-  badges:
-    index:
-      header: Ваши награды
-    all_badges:
-      header: Все награды
-      title: Название
-      picture: Изображение
   admin:
     gists:
       index:
@@ -94,7 +85,6 @@ ru:
     shared:
       nav: 
         testguru: ТестГуру
-        badges: 'Все награды'
         admin_panel: Панель Администратора 
         greeting: "Добро пожаловать, %{current_user_name} Гуру!"
         logout: Выйти из аккаунта
@@ -108,15 +98,6 @@ ru:
       answer:
         edit_answer: Изменить ответ
         delete_answer: Удалить ответ
-    badges:
-      index: 
-        header: Все награды
-        user: Пользователь
-        name: Название
-        picture: Изображение
-        action: Действие
-      badge: 
-        delete: Удалить
     questions: 
       index: 
         header: "Вопросы теста '%{test_title}'"
@@ -217,9 +198,6 @@ ru:
         level: Уровень
         author: Автор
         countdown: Время прохождения в минутах
-      badge:
-        title: Название
-        picture: Изображение 
   devise:
     failure:
       already_authenticated: Вы уже вошли в систему.

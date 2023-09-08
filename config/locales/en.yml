@@ -39,8 +39,6 @@ en:
         other: "%{count} errors detected"
     nav: 
       testguru: TestGuru
-      all_badges: All badges
-      user_badges: My badges
       admin_panel: Administrator panel 
       greeting: "Welcome, %{current_user_name} Guru!"
       logout: Log out
@@ -76,13 +74,6 @@ en:
       progress_bar: Your progress
       time_left: Time left
       gist_question: Gist question
-  badges:
-    index:
-      header: Your badges
-    all_badges:
-      header: All badges
-      title: Title
-      picture: Picture
   admin:
     gists:
       index:
@@ -92,7 +83,6 @@ en:
     shared:
       nav: 
         testguru: TestGuru
-        badges: All badges
         admin_panel: Administrator Panel
         greeting: "Welcome, %{current_user_name} Guru!"
         logout: Log out
@@ -106,15 +96,6 @@ en:
       answer:
         edit_answer: Edit answer
         delete_answer: Delete answer
-    badges:
-      index: 
-        header: All badges
-        user: User
-        name: Name
-        picture: Picture
-        action: Action
-      badge: 
-        delete: Delete
     questions: 
       index: 
         header: "Questions of '%{test_title}' test"
@@ -207,9 +188,6 @@ en:
         level: Level
         author: Author
         countdown: Time to pass test in minutes
-      badge:
-        title: Название
-        picture: Изображение 
   devise:
     failure:
       already_authenticated: You are already signed in.

@@ -1,7 +1,5 @@
 <nav class="navbar navbar-light bg-light">
   <%= link_to t('.testguru'), tests_path, class: 'navbar-brand' %>
-
-  <p><%= link_to t('.badges'), admin_badges_path, target: '_blank', rel: 'nofollow'%></p> 
   
   <span class="navbar-text"><%= t('.admin_panel') %>
     <b class="nav user-email"><%= t('.greeting', current_user_name: current_user.name) %></b> |

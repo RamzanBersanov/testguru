@@ -1,5 +1,8 @@
 document.addEventListener('turbolinks:load', function() {
+
   const countDownDate = new Date ($('.timer').data('end-time')).getTime()
+
+  console.log(countDownDate)
 
   if(countDownDate){
 

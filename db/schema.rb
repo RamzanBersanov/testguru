@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 2023_09_08_093518) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "badges", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "picture", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_badges_on_user_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -141,7 +132,6 @@ ActiveRecord::Schema.define(version: 2023_09_08_093518) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions", on_delete: :cascade
-  add_foreign_key "badges", "users", on_delete: :cascade
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests", on_delete: :cascade
