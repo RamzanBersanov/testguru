@@ -19,10 +19,19 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        countdown: 'Время прохождения теста в минутах'
       contact:
         name: 'Имя'
         email: 'Электронная почта'
         message: 'Сообщение'
+      answer:
+        body: Тело ответа
+        correct: Правильность
+  layouts:
+    application: 
+      title: Тест-Гуру
+    admin:
+      admin_panel: Панель Администратора
   shared:
     errors:
       header:
@@ -30,6 +39,13 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    nav: 
+      testguru: ТестГуру
+      all_badges: 'Все награды'
+      user_badges: 'Мои награды'
+      admin_panel: Панель Администратора 
+      greeting: "Добро пожаловать, %{current_user_name} Гуру!"
+      logout: Выйти из аккаунта
   gists:
     create:
       success: "Гист %{link} успешно сохранен"
@@ -50,7 +66,7 @@ ru:
     start: 'Пройти тест'
   test_passages:
     result: 
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
       back: 'Назад к списку тестов'
       correct_questions: "Количество правильных ответов: %{correct_questions}"
       correct_percentage: "Дано %{correct_percentage}% правильных ответов"
@@ -59,18 +75,68 @@ ru:
     show:
       header: 'Пройти тест %{test_title}'
       all_questions: 'Всего вопросов в тесте %{all_questions}'
+      progress_bar: Ваш прогресс
+      time_left: Оставшееся время
+      gist_question: Сохранить гист с вопросом
+  badges:
+    index:
+      header: Ваши награды
+    all_badges:
+      header: Все награды
+      title: Название
+      picture: Изображение
   admin:
     gists:
       index:
         header: "Гисты пользователей"
         creator_email: "Эл. почта пользователя"
         question_body: "Содержание вопроса"
+    shared:
+      nav: 
+        testguru: ТестГуру
+        badges: 'Все награды'
+        admin_panel: Панель Администратора 
+        greeting: "Добро пожаловать, %{current_user_name} Гуру!"
+        logout: Выйти из аккаунта
+    answers:
+      index: 
+        header: "Ответы на вопрос '%{question_body}' из теста '%{test_title}'"
+        create_answer: Создать ответ
+        body: Тело ответа
+        correct: Правильность
+        actions: Действия
+      answer:
+        edit_answer: Изменить ответ
+        delete_answer: Удалить ответ
+    badges:
+      index: 
+        header: Все награды
+        user: Пользователь
+        name: Название
+        picture: Изображение
+        action: Действие
+      badge: 
+        delete: Удалить
+    questions: 
+      index: 
+        header: "Вопросы теста '%{test_title}'"
+        create_question: Создать вопрос
+        question: Вопрос
+        actions: Действия
+      edit: 
+        see_answers: Посмотреть ответы
+      question: 
+        edit: Изменить
+        delete: Удалить
     tests:
       index:
         header: "Тесты проекта"
-        questions_count: 'Количество вопросов'
-        actions: 'Действия'
         create: 'Создать новый тест'
+        title: Название
+        level: Уровень
+        questions_count: 'Количество вопросов'
+        countdown: Время прохождения теста в минутах
+        actions: 'Действия'
       create: 
         success: "Тест успешно создан"
       update:
@@ -89,6 +155,7 @@ ru:
       new:
         header: 'Создать новый тест'
       show:
+        show_questions: 'Посмотреть вопросы'
         create_question: 'Создать новый вопрос'
       form:
         prompt: 'Выберите категорию:'
@@ -144,6 +211,15 @@ ru:
         many: "%{model}: сохранение не удалось из-за %{count} ошибок"
         other: "%{model}: сохранение не удалось из-за %{count} ошибки"
   activerecord:
+    attributes:
+      test:
+        title: Название
+        level: Уровень
+        author: Автор
+        countdown: Время прохождения в минутах
+      badge:
+        title: Название
+        picture: Изображение 
   devise:
     failure:
       already_authenticated: Вы уже вошли в систему.

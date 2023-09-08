@@ -6,4 +6,6 @@
                   admin_answer_path(@answer),
                   method: :delete,
                   data: { confirm: 'Are you sure?' }  %></li>
+  <li><%= link_to 'Вернуться к вопросу', admin_question_path(@answer.question) %></li><br>
+  <li><%= link_to 'Вернуться к ответам', admin_question_answers_path(question_id: @answer.question.id) %></li><br>
 </ul>

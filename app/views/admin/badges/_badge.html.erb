@@ -1,0 +1,7 @@
+<tr>
+  <td><%= badge.user.name %></td>
+  <td><%= badge.title %></td>
+  <td><%= image_tag badge.picture, height: 30 %><td>
+  <td><%= button_to t('.delete'), admin_badge_path(badge), method: :delete,
+                  data: { confirm: t('.are_you_sure') } %></td>
+</tr>

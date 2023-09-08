@@ -3,6 +3,7 @@
 class Test < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :tested_user, class_name: 'User', foreign_key: 'tested_user_id' #has_many!!!
 
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
@@ -11,6 +12,7 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level, message: 'can only be one test with such title and level' }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :countdown, numericality: { only_integer: true, greater_than: 0 }
 
   scope :passed, ->(test_level) { where(level: test_level) }
   scope :easy, -> { where(level: 0..1) }
