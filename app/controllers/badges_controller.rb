@@ -1,10 +1,8 @@
 class BadgesController < ApplicationController
-  def index
-    @user = User.find(params[:user_id])
-    @badges = @user.badges
-  end
+  before_action :authenticate_user!
 
-  def all_badges
-    @badges = Badge.all
-  end 
+  def index
+    @user_badges = current_user.badges
+    @all_badges = Badge.all
+  end
 end

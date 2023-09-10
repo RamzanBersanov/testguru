@@ -1,5 +1,6 @@
 <tr>
   <td class="align-middle"><%= question.body %></td><br>
+  <td class="align-middle"><%= link_to t('.show'), admin_question_path(question) %></td><br>
   <td class="align-middle"><%= link_to t('.edit'), edit_admin_question_path(question) %></td><br>
   <td class="align-middle">
     <%= link_to t('.delete'),

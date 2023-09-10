@@ -23,9 +23,6 @@ ru:
         name: 'Имя'
         email: 'Электронная почта'
         message: 'Сообщение'
-      answer:
-        body: Тело ответа
-        correct: Правильность
   layouts:
     application: 
       title: Тест-Гуру
@@ -40,8 +37,7 @@ ru:
         other: "Обнаружено %{count} ошибки"
     nav: 
       testguru: ТестГуру
-      all_badges: 'Все награды'
-      user_badges: 'Мои награды'
+      badges: 'Награды'
       admin_panel: Панель Администратора 
       greeting: "Добро пожаловать, %{current_user_name} Гуру!"
       logout: Выйти из аккаунта
@@ -78,9 +74,8 @@ ru:
       gist_question: Сохранить гист с вопросом
   badges:
     index:
-      header: Ваши награды
-    all_badges:
-      header: Все награды
+      user_badges: Ваши награды
+      all_badges: Все награды
       title: Название
       picture: Изображение
   admin:
@@ -92,17 +87,11 @@ ru:
     shared:
       nav: 
         testguru: ТестГуру
-        badges: 'Все награды'
+        badges: 'Управлять наградами'
         admin_panel: Панель Администратора 
         greeting: "Добро пожаловать, %{current_user_name} Гуру!"
         logout: Выйти из аккаунта
     answers:
-      index: 
-        header: "Ответы на вопрос '%{question_body}' из теста '%{test_title}'"
-        create_answer: Создать ответ
-        body: Тело ответа
-        correct: Правильность
-        actions: Действия
       answer:
         edit_answer: Изменить ответ
         delete_answer: Удалить ответ
@@ -113,19 +102,21 @@ ru:
         name: Название
         picture: Изображение
         action: Действие
+      create:
+        success: "Награда успешно сохранена"
       badge: 
         delete: Удалить
     questions: 
-      index: 
-        header: "Вопросы теста '%{test_title}'"
-        create_question: Создать вопрос
-        question: Вопрос
-        actions: Действия
       edit: 
         see_answers: Посмотреть ответы
       question: 
+        show: 'Посмотреть вопрос'
         edit: Изменить
         delete: Удалить
+      show:
+        actions: Действия
+        body: Ответ
+        correct: Правильность
     tests:
       index:
         header: "Тесты проекта"
@@ -152,7 +143,9 @@ ru:
       new:
         header: 'Создать новый тест'
       show:
-        show_questions: 'Посмотреть вопросы'
+        header: Тест %{test}
+        question: Вопрос
+        actions: Действия
         create_question: 'Создать новый вопрос'
       form:
         prompt: 'Выберите категорию:'
@@ -216,6 +209,11 @@ ru:
       badge:
         title: Название
         picture: Изображение 
+      question:
+        body: Тело вопроса
+      answer:
+        body: Тело ответа
+        correct: Правильность
   devise:
     failure:
       already_authenticated: Вы уже вошли в систему.

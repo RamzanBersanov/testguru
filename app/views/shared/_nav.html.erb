@@ -7,9 +7,7 @@
   </span class="navbar-text">
   <span>
     <% if user_signed_in? %>
-      <p><%= link_to t('.all_badges'), all_badges_path, target: '_blank', rel: 'nofollow'%></p> 
-      <p><%= link_to t('.user_badges'), user_badges_path(user_id: current_user.id), target: '_blank',
-                                                                              rel: 'nofollow'%></p> 
+      <p><%= link_to t('.badges'), user_badges_path(user_id: current_user.id), rel: "nofollow" %></p> 
     <% end %>
   </span>
   <span class="navbar-text">

@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
 users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', type: 'Admin', email: 'admin@mail.ru',
-                      password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }, 
-                    { name: 'user', first_name: 'User', last_name: 'User', email: 'user@mail.ru',
-                      password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
+                        password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc },
+                      { name: 'user', first_name: 'User', last_name: 'User', email: 'user@mail.ru',
+                        password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
 p "Created #{User.count} Users"
 
 badges = Badge.create!([
-  { user: users[1], title: 'for_easy', picture: 'third.jpg' },
-  { user: users[1], title: 'for_intermediate', picture: 'second.jpg' },
-  { user: users[1], title: 'for_difficult', picture: 'first.jpg' },
-  { user: users[1], title: 'for_academic', picture: 'academic.png' },
-  { user: users[1], title: 'for_logic', picture: 'logic.png' }
-])
+                         { user: users[1], title: '1', picture: 'third.jpg' },
+                         { user: users[1], title: '2', picture: 'second.jpg' },
+                         { user: users[1], title: '3', picture: 'second.jpg' },
+                         { user: users[1], title: '4', picture: 'second.jpg' },
+                         { user: users[1], title: '5', picture: 'first.jpg' },
+                         { user: users[1], title: 'Академические', picture: 'academic.png' },
+                         { user: users[1], title: 'Логические', picture: 'logic.png' }
+                       ])
 p "Created #{Badge.count} Badges"
 
 categories = Category.create!([
@@ -26,8 +28,7 @@ tests = Test.create!([
                        { title: 'История-2', level: '2', author: users[0], category: categories[0] },
                        { title: 'География-1', level: '3', author: users[0], category: categories[0] },
                        { title: 'География-2', level: '4', author: users[0], category: categories[0] },
-                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1] },
-                       { title: 'Логика-2', level: '6', author: users[0], category: categories[1] }
+                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1] }
                      ])
 p "Created #{Test.count} Tests"
 

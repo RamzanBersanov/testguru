@@ -5,17 +5,17 @@ class Admin::BadgesController < Admin::BaseController
 
   def new
     @badge = Badge.new
-  end 
+  end
 
   def create
     @badge = Badge.new(badge_params)
 
     if @badge.save
-      redirect_to [:admin, @badge], success: t('.success')
+      redirect_to admin_badges_path, success: t('.success')
     else
       render :new
     end
-  end 
+  end
 
   def destroy
     @badge = Badge.find(params[:id])
@@ -23,7 +23,7 @@ class Admin::BadgesController < Admin::BaseController
     redirect_to admin_badges_url, info: t('.deleted')
   end
 
-  private 
+  private
 
   def badge_params
     params.require(:badge).permit(:title, :picture)

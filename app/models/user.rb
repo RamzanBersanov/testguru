@@ -15,7 +15,6 @@ class User < ApplicationRecord
   has_many :badges, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
-  has_many :successful_tests, class_name: 'Test', foreign_key: 'tested_user_id', dependent: :destroy
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)

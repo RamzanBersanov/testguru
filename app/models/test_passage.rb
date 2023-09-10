@@ -9,6 +9,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_current_question, on: %i[create update]
 
+  scope :successful, -> { where(success: true) }
+
   def completed?
     current_question.nil?
   end
