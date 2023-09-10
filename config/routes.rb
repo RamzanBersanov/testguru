@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :gists, only: :index
   end
-  
+
   namespace :admin do
     resources :tests, only: %i[index show edit update new create destroy] do
       patch :update_inline, on: :member

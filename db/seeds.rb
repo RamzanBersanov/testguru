@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', type: 'Admin', email: 'admin@mail.ru',
-                      password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }, 
-                    { name: 'user', first_name: 'User', last_name: 'User', email: 'user@mail.ru',
-                      password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
+                        password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc },
+                      { name: 'user', first_name: 'User', last_name: 'User', email: 'user@mail.ru',
+                        password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
 p "Created #{User.count} Users"
 
 categories = Category.create!([
@@ -13,7 +13,7 @@ categories = Category.create!([
 p "Created #{Category.count} Categories"
 
 tests = Test.create!([
-                       { title: 'История-1', level: '1', author: users[0], category: categories[0], countdown: 3 },
+                       { title: 'История-1', level: '1', author: users[0], category: categories[0], countdown: 1 },
                        { title: 'История-2', level: '2', author: users[0], category: categories[0], countdown: 3 },
                        { title: 'География-1', level: '3', author: users[0], category: categories[0], countdown: 3 },
                        { title: 'География-2', level: '4', author: users[0], category: categories[0], countdown: 3 },

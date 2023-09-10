@@ -6,15 +6,15 @@ document.addEventListener('turbolinks:load', function() {
 
   if(countDownDate){
 
-    var x = setInterval(function() {
+    let x = setInterval(function() {
 
-    var now = new Date().getTime();
+    const now = new Date().getTime();
 
-    var distance = countDownDate - now;
+    let distance = countDownDate - now;
 
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.getElementById("result").innerHTML =  hours + "ч "
     + minutes + "м " + seconds + "с ";

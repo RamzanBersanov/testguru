@@ -30,6 +30,14 @@ class TestPassage < ApplicationRecord
     correct_percentage >= SUCCESS_RATIO
   end
 
+  def end_time
+    created_at + self.test.countdown.minutes
+  end
+
+  def timer
+    timer = end_time - Time.current
+  end
+
   private
 
   def set_current_question

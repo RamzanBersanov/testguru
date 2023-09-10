@@ -7,7 +7,7 @@ class Admin::QuestionsController < Admin::BaseController
   def index
     @questions = @test.questions
   end
-  
+
   def show; end
 
   def edit; end

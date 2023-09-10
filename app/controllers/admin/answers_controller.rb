@@ -7,7 +7,7 @@ class Admin::AnswersController < Admin::BaseController
   def index
     @answers = @question.answers
   end
-  
+
   def show; end
 
   def edit; end
