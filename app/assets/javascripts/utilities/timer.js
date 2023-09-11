@@ -25,6 +25,5 @@ document.addEventListener('turbolinks:load', function() {
       window.location = $('.path').data('result')
     }
   }, 1000);}
-
-
+  
 })
