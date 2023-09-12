@@ -1,12 +1,17 @@
 <h1>Создать бейдж</h1>
 
-<%@titles = ["1", "2", "3", "4", "5", "Логические", "Академические"]%>
+<%@titles = ['За пройденный уровень', 'За пройденную категорию', 'За успешную первую поппытку']%>
+<%@rules = ['level?', 'category?', 'successful_first_try?']%>
+<%@given_for = ["1", "2", "3", "4", "5", "Логические", "Академические", 'successful_first_try?']%>
 
 <%= form_with model: [:admin, @badge], local: true do |form| %>
   <%= render 'shared/errors', resource: @badge %>
   
   <%= form.label :title %>
   <%=form.select(:title, @titles.map { |title| [ title, title ] })%><br>
+
+  <%= form.label :given_for %>
+  <%=form.select(:given_for, @given_for.map { |title| [ title, title ] })%><br>
     
   <%= form.label :picture %>     
   <%= form.select :picture, {"1" => 'third.jpg', 
@@ -15,7 +20,11 @@
                             "4" => 'second.jpg',
                             "5" => 'first.jpg',
                             "Логические" => 'logic.png',
-                            "Академические" => 'academic.png'} %><br>
+                            "Академические" => 'academic.png',
+                            "Успешная первая попытка" => 'excellence.jpeg'} %><br>
+
+  <%= form.label :rule %> 
+  <%= form.select :rule, @rules.map  { |rule| [ rule, rule ] }%>
 
   <%= form.submit %>
 <% end %>

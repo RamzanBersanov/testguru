@@ -76,6 +76,7 @@ en:
       all_badges: All badges
       title: Title
       picture: Picture
+      given_for: Category or level
   admin:
     gists:
       index:
@@ -99,6 +100,7 @@ en:
         user: User
         name: Name
         picture: Picture
+        given_for: Category or level
         action: Action
       create:
         success: Badge is successfully gained!

@@ -1,11 +1,7 @@
 <tr>
-  <td class="align-middle"><%= question.body %></td><br>
-  <td class="align-middle"><%= link_to t('.show'), admin_question_path(question) %></td><br>
-  <td class="align-middle"><%= link_to t('.edit'), edit_admin_question_path(question) %></td><br>
   <td class="align-middle">
-    <%= link_to t('.delete'),
-                  admin_question_path(question),
-                  method: :delete,
-                  data: { confirm: t('.are_you_sure') } %>
+    <%# <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %> %>
+    <%= render 'form_inline', question: question == @question ? @question : question %>
   </td><br>
+  <td class="align-middle"><%= question.answers.count %></td><br>
 </tr>

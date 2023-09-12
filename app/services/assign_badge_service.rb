@@ -3,29 +3,33 @@ class AssignBadgeService
     @test_passage = test_passage
     @test = @test_passage.test
     @user = @test_passage.user
-    @user_successful_tests = @user.tests.joins(:test_passages).merge(TestPassage.successful)
+    @badges = Badge.all
+    @user_successful_tests = @user.tests.joins(:test_passages).merge(TestPassage.successful).distinct
   end
 
   def call
-    rules = [for_level, for_category]
-    return if rules.nil?
-
-    @user.badges << [Badge.where(title: rules[0]), Badge.where(title: rules[1])]
-  end
-
-  private
-
-  def for_level
-    if @user_successful_tests.where(level: @test.level).distinct.order(:id).ids ==
-       Test.where(level: @test.level).order(:id).ids
-      badge_type = @test.level
+    @badges.each do |badge|
+      if send "#{badge.rule}", badge.given_for
+        @test_passage.user.badges << badge
+      end
     end
   end
 
-  def for_category
-    if @user_successful_tests.where(category_id: @test.category_id).distinct.order(:id).ids ==
-       Test.where(category_id: @test.category_id).order(:id).ids
-      badge_type = @test.category.title
+  def category?(category)
+    if @test.category.title == category
+      all_tests_in_category = Test.category_title(category).ids
+      @user_successful_tests.where(id: all_tests_in_category).ids.count == all_tests_in_category.count
     end
   end
+
+  def level?(level)
+    if @test.level == level.to_i 
+      all_tests_in_level = Test.where(level: level.to_i).ids
+      @user_successful_tests.where(id: all_tests_in_level).ids.count == all_tests_in_level.count
+    end 
+  end
+
+  def successful_first_try?(successful_first_try)
+    @user.test_passages.where(test_id: @test.id).successful.count == 1
+  end 
 end

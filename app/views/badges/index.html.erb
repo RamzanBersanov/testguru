@@ -2,8 +2,9 @@
   <h2><%= t('.user_badges') %></h1>
     <table class="table">
         <tr>
-          <th scope="col"><%= Badge.human_attribute_name('title') %></th>
-          <th scope="col"><%= Badge.human_attribute_name('picture') %></th>
+          <th scope="col"><%= t('.title') %></th>
+          <th scope="col"><%= t('.given_for') %></th>
+          <th scope="col"><%= t('.picture') %></th>
         </tr>
       <%= render partial: "badge", collection: @user_badges, as: :badge %>
     </table>
@@ -12,6 +13,7 @@
     <table class="table">
         <tr>
           <th scope="col"><%= t('.title') %></th>
+          <th scope="col"><%= t('.given_for') %></th>
           <th scope="col"><%= t('.picture') %></th>
         </tr>
       <%= render partial: "badge", collection: @all_badges, as: :badge %>
