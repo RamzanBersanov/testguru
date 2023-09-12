@@ -6,16 +6,15 @@ users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', 
                         password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
 p "Created #{User.count} Users"
 
-# badges = Badge.create!([
-#                          { user: users[1], title: '1', picture: 'third.jpg' },
-#                          { user: users[1], title: '2', picture: 'second.jpg' },
-#                          { user: users[1], title: '3', picture: 'second.jpg' },
-#                          { user: users[1], title: '4', picture: 'second.jpg' },
-#                          { user: users[1], title: '5', picture: 'first.jpg' },
-#                          { user: users[1], title: 'Академические', picture: 'academic.png' },
-#                          { user: users[1], title: 'Логические', picture: 'logic.png' }
-#                        ])
-# p "Created #{Badge.count} Badges"
+badges = Badge.create!([{ title: "За пройденный уровень", picture: 'third.jpg', rule: "level?", given_for: "1"},
+                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level?", given_for: "2"},
+                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level?", given_for: "3"},
+                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level?", given_for: "4"},
+                        { title: "За пройденный уровень", picture: 'first.jpg', rule: "level?", given_for: "5"},
+                        { title: 'За успешную первую попытку', picture: 'excellence.jpeg', rule: 'successful_first_try?', given_for: 'successful_first_try?'},
+                        { title: "За пройденную категорию", picture: 'logic.png', rule: "category?", given_for: "Логические"},
+                        { title: "За пройденный уровень", picture: 'academic.png', rule: "category?", given_for: "Академические"}])
+p "Created #{Badge.count} Badges"
 
 categories = Category.create!([
                                 { title: 'Академические' },
