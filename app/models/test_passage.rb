@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_current_question, on: %i[create update]
 
   def completed?
-    current_question.nil?
+    current_question.nil? || self.timer <= 0
   end
 
   def question_number

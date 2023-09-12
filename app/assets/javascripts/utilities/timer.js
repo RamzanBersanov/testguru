@@ -22,7 +22,7 @@ document.addEventListener('turbolinks:load', function() {
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("result").innerHTML = "Время истекло!";
-      window.location = $('.path').data('result')
+      // window.location = $('.path').data('result')
     }
   }, 1000);}
   
