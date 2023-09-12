@@ -30,6 +30,5 @@
   <% end %>
 
   <p><%= link_to t('.gist_question'), test_passage_gists_path(@test_passage), method: :post %></p> 
-  <p><%= form.submit class: 'submit-button' %></p>
-  <p class="path", data-result="<%= result_test_passage_path(@test_passage) %>"></p>
+  <p><%= form.submit id: 'submit-button' %></p>
 <% end %>

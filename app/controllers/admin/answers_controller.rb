@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Admin::AnswersController < Admin::BaseController
-  before_action :find_question, only: %i[index new create]
+  before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[show edit update destroy]
-  
+
   def show; end
 
   def edit; end

@@ -2,8 +2,6 @@ document.addEventListener('turbolinks:load', function() {
 
   const countDownDate = new Date ($('.timer').data('end-time')).getTime()
 
-  console.log(countDownDate)
-
   if(countDownDate){
 
     let x = setInterval(function() {
@@ -22,7 +20,7 @@ document.addEventListener('turbolinks:load', function() {
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("result").innerHTML = "Время истекло!";
-      // window.location = $('.path').data('result')
+      document.getElementById("submit-button").click();
     }
   }, 1000);}
   

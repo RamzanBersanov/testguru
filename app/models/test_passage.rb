@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_current_question, on: %i[create update]
 
   def completed?
-    current_question.nil? || self.timer <= 0
+    current_question.nil? || timer <= 0
   end
 
   def question_number
@@ -35,7 +35,7 @@ class TestPassage < ApplicationRecord
   end
 
   def timer
-    timer = end_time - Time.current
+    end_time - Time.current
   end
 
   private
