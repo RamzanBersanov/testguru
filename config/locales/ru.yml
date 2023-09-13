@@ -78,7 +78,7 @@ ru:
       all_badges: Все награды
       title: Название
       picture: Изображение
-      given_for: Категория или уровень
+      rule_value: Категория или уровень
   admin:
     gists:
       index:
@@ -102,7 +102,7 @@ ru:
         user: Пользователь
         name: Название
         picture: Изображение
-        given_for: Категория или уровень
+        rule_value: Категория или уровень
         action: Действие
       create:
         success: "Награда успешно сохранена"

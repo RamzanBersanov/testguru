@@ -13,6 +13,7 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
+    self.update(success: true) if successful?
   end
 
   def question_number

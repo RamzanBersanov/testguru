@@ -6,14 +6,14 @@ users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', 
                         password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
 p "Created #{User.count} Users"
 
-badges = Badge.create!([{ title: "За пройденный уровень", picture: 'third.jpg', rule: "level?", given_for: "1"},
-                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level?", given_for: "2"},
-                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level?", given_for: "3"},
-                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level?", given_for: "4"},
-                        { title: "За пройденный уровень", picture: 'first.jpg', rule: "level?", given_for: "5"},
-                        { title: 'За успешную первую попытку', picture: 'excellence.jpeg', rule: 'successful_first_try?', given_for: 'successful_first_try?'},
-                        { title: "За пройденную категорию", picture: 'logic.png', rule: "category?", given_for: "Логические"},
-                        { title: "За пройденный уровень", picture: 'academic.png', rule: "category?", given_for: "Академические"}])
+badges = Badge.create!([{ title: "За пройденный уровень", picture: 'third.jpg', rule: "level", rule_value: "1"},
+                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level", rule_value: "2"},
+                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level", rule_value: "3"},
+                        { title: "За пройденный уровень", picture: 'second.jpg', rule: "level", rule_value: "4"},
+                        { title: "За пройденный уровень", picture: 'first.jpg', rule: "level", rule_value: "5"},
+                        { title: 'За успешную первую попытку', picture: 'excellence.jpeg', rule: 'successful_first_try', rule_value: 'успешная первая попытка'},
+                        { title: "За пройденную категорию", picture: 'logic.png', rule: "category", rule_value: "2"},
+                        { title: "За пройденную категорию", picture: 'academic.png', rule: "category", rule_value: "1"}])
 p "Created #{Badge.count} Badges"
 
 categories = Category.create!([
@@ -35,8 +35,7 @@ questions = Question.create!([
                                { body: 'Первый президент России', test: tests[0] },
                                { body: 'Год распада СССР', test: tests[0] },
                                { body: 'Какой город стал столицей Древнерусского государства?', test: tests[0] },
-                               { body: 'В каком городе находится самый крупный музей России — Эрмитаж?',
-                                 test: tests[1] },
+                               { body: 'В каком городе находится самый крупный музей России — Эрмитаж?', test: tests[1] },
                                { body: 'Когда в России отменили крепостное право?', test: tests[1] },
                                { body: 'Кем был П.И. Чайковский?', test: tests[1] },
                                { body: 'Самая большая страна в мире', test: tests[2] },
