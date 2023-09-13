@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
 class Admin::QuestionsController < Admin::BaseController
-  before_action :find_question, only: %i[show edit update]
+  before_action :find_question, only: %i[show edit destroy update]
   before_action :find_test, only: %i[new create]
 
-  def index
-    @test = Test.find(params[:test_id])
-    @questions = @test.questions
-  end
-  
   def show; end
 
   def edit; end

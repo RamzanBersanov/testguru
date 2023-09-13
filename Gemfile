@@ -23,8 +23,6 @@ gem 'mail_form'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbolinks'
 
-gem 'webpacker'
-
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 

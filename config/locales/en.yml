@@ -19,15 +19,29 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        countdown: Time to pass
       contact:
         name: 'Name'
         email: 'Email'
         message: 'Message'
+      answer:
+        body: Answer body
+        correct: Correctness
+  layouts:
+    application: 
+      title: TestGuru
+    admin:
+      admin_panel: Administrator panel
   shared:
     errors:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav: 
+      testguru: TestGuru
+      admin_panel: Administrator panel 
+      greeting: "Welcome, %{current_user_name} Guru!"
+      logout: Log out
   gist:
     create:
       success: "Gist %{link} was created successfully"
@@ -57,15 +71,48 @@ en:
     show:
       header: 'To pass the %{test_title} test'
       all_questions: 'There are %{all_questions} questions overall'
+      progress_bar: Your progress
+      time_left: Time left
+      gist_question: Gist question
   admin:
     gists:
       index:
         header: "Users' gists"
         creator_email: "E-mail of user"
         question_body: "Question"
+    shared:
+      nav: 
+        testguru: TestGuru
+        admin_panel: Administrator Panel
+        greeting: "Welcome, %{current_user_name} Guru!"
+        logout: Log out
+    answers:
+      index: 
+        header: "Answers to the '%{question_body}' question of '%{test_title}' test"
+        create_answer: New answer
+        body: Answer body
+        correct: Correctness
+        actions: Actions
+      answer:
+        edit_answer: Edit answer
+        delete_answer: Delete answer
+    questions: 
+      index: 
+        header: "Questions of '%{test_title}' test"
+        create_question: New question
+        question: Question
+        actions: Actions
+      edit: 
+        see_answers: See answers
+      question: 
+        edit: Edit
+        delete: Delete
     tests:
       index:
         header: "Tricky tests"
+        title: Title
+        level: Level
+        countdown: Time to pass test in minutes
         questions_count: 'The questions count'
         actions: 'Actions'
         create: 'Create new test'
@@ -87,6 +134,7 @@ en:
       new:
         header: 'Create new test'
       show:
+        show_questions: Show questions
         create_question: 'Create a new question'
       form:
         prompt: 'Choose the category:'
@@ -133,7 +181,13 @@ en:
       header:
         one: "%{count} error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
-activerecord:
+  activerecord:
+    attributes:
+      test:
+        title: Title
+        level: Level
+        author: Author
+        countdown: Time to pass test in minutes
   devise:
     failure:
       already_authenticated: You are already signed in.

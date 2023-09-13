@@ -1,7 +1,6 @@
-<p>
-  <strong><%= Test.human_attribute_name('title') %></strong>
-  <%= @test.title %>
-</p>
+<h1>
+  <%= t('.header', test: @test.title) %>
+</h1>
 
 <p>
   <strong><%= Test.human_attribute_name('level') %></strong>
@@ -17,6 +16,17 @@
   <strong><%= link_to t('.create_question'), new_admin_test_question_path(test_id: @test.id) %></strong>
 </p>
 
-<%= render 'back' %>
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= t('.question') %></th>
+      <th colspan='3'><%= t('.actions') %></th>
+    </tr>
+    
+    <%= render @test.questions %>
+  </tbody>
+</table>
 
+
+<%= render 'back' %>
 

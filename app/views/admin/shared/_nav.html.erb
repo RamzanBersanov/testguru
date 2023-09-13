@@ -1,8 +1,8 @@
 <nav class="navbar navbar-light bg-light">
-  <%= link_to "ТестГуру", tests_path, class: 'navbar-brand' %>
-
-  <span class="navbar-text">Панель Администратора 
-    Добро пожаловать, <b class="nav user-email"><%= current_user.name %></b> Гуру! |
-    <%= link_to "Выйти из аккаунта", destroy_user_session_path,  method: :delete %>
+  <%= link_to t('.testguru'), tests_path, class: 'navbar-brand' %>
+  
+  <span class="navbar-text"><%= t('.admin_panel') %>
+    <b class="nav user-email"><%= t('.greeting', current_user_name: current_user.name) %></b> |
+    <%= link_to t('.logout'), destroy_user_session_path,  method: :delete %>
   </span>
 </nav>

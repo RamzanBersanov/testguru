@@ -1,5 +1,3 @@
-const { connectChunkGroupParentAndChild } = require("webpack/lib/GraphHelpers")
-
 document.addEventListener('turbolinks:load', function() {
   let control = document.querySelector('.sort-by-title')
   
