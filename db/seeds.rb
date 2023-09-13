@@ -1,8 +1,22 @@
 # frozen_string_literal: true
 
-user = User.create!({ name: 'admin', first_name: 'user', last_name: 'user', email: 'usermuser@gmail.com',
-                      password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc })
+users = User.create!([{ name: 'admin', first_name: 'Admin', last_name: 'Admin', type: 'Admin', email: 'admin@mail.ru',
+                        password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc },
+                      { name: 'user', first_name: 'User', last_name: 'User', email: 'user@mail.ru',
+                        password: '000000', password_confirmation: '000000', confirmed_at: Time.now.utc }])
 p "Created #{User.count} Users"
+
+badges = Badge.create!([{ title: 'За пройденный уровень', picture: 'third.jpg', rule: 'level', rule_value: '1' },
+                        { title: 'За пройденный уровень', picture: 'second.jpg', rule: 'level', rule_value: '2' },
+                        { title: 'За пройденный уровень', picture: 'second.jpg', rule: 'level', rule_value: '3' },
+                        { title: 'За пройденный уровень', picture: 'second.jpg', rule: 'level', rule_value: '4' },
+                        { title: 'За пройденный уровень', picture: 'first.jpg', rule: 'level', rule_value: '5' },
+                        { title: 'За успешную первую попытку', picture: 'excellence.jpeg',
+                          rule: 'successful_first_try', rule_value: 'успешная первая попытка' },
+                        { title: 'За пройденную категорию', picture: 'logic.png', rule: 'category', rule_value: '2' },
+                        { title: 'За пройденную категорию', picture: 'academic.png', rule: 'category',
+                          rule_value: '1' }])
+p "Created #{Badge.count} Badges"
 
 categories = Category.create!([
                                 { title: 'Академические' },
@@ -11,12 +25,11 @@ categories = Category.create!([
 p "Created #{Category.count} Categories"
 
 tests = Test.create!([
-                       { title: 'История-1', level: '1', author: user, category: categories[0] },
-                       { title: 'История-2', level: '2', author: user, category: categories[0] },
-                       { title: 'География-1', level: '3', author: user, category: categories[0] },
-                       { title: 'География-2', level: '4', author: user, category: categories[0] },
-                       { title: 'Логика-1', level: '5', author: user, category: categories[1] },
-                       { title: 'Логика-2', level: '6', author: user, category: categories[1] }
+                       { title: 'История-1', level: '1', author: users[0], category: categories[0] },
+                       { title: 'История-2', level: '2', author: users[0], category: categories[0] },
+                       { title: 'География-1', level: '3', author: users[0], category: categories[0] },
+                       { title: 'География-2', level: '4', author: users[0], category: categories[0] },
+                       { title: 'Логика-1', level: '5', author: users[0], category: categories[1] }
                      ])
 p "Created #{Test.count} Tests"
 
@@ -89,7 +102,7 @@ Answer.create!([
                ])
 p "Created #{Answer.count} Answers"
 
-TestPassage.create(test: tests[0], user: user)
-TestPassage.create(test: tests[1], user: user)
-TestPassage.create(test: tests[2], user: user)
-TestPassage.create(test: tests[3], user: user)
+TestPassage.create(test: tests[0], user: users[0])
+TestPassage.create(test: tests[1], user: users[0])
+TestPassage.create(test: tests[2], user: users[0])
+TestPassage.create(test: tests[3], user: users[0])

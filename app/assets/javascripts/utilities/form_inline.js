@@ -1,4 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
+    
     $('.form-inline-link').on('click', formInlineLinkHandler)
 
     const errors = document.querySelector('.resource-errors')

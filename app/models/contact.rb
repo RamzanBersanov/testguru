@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Contact < MailForm::Base
   attribute :name,      validate: true
   attribute :email,     validate: /\A([\w.%+-]+)@([\w-]+\.)+(\w{2,})\z/i
@@ -11,7 +9,7 @@ class Contact < MailForm::Base
   def headers
     {
       subject: 'Contact Form Inquiry',
-      to: 'admfortests@gmail.com',
+      to: 'brrramones@gmail.com',
       from: %("#{name}" <#{email}>)
     }
   end

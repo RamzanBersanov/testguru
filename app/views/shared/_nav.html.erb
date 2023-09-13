@@ -1,14 +1,19 @@
 <nav class="navbar navbar-light bg-light">
-  <%= link_to "ТестГуру", tests_path, class: 'navbar-brand' %>
+  <%= link_to t('.testguru'), tests_path, class: 'navbar-brand' %>
   <span class="navbar-text">
     <% if user_signed_in? && current_user.type == 'Admin' %>
-      <%= link_to "Панель управления администратора", admin_tests_path %>
+      <%= link_to t('.admin_panel'), admin_tests_path %>
+    <% end %>
+  </span class="navbar-text">
+  <span>
+    <% if user_signed_in? %>
+      <p><%= link_to t('.badges'), user_badges_path(user_id: current_user.id), rel: "nofollow" %></p> 
     <% end %>
   </span>
   <span class="navbar-text">
     <% if user_signed_in? %>
-      Добро пожаловать, <b class="nav user-email"><%= current_user.name %></b> Гуру! |
-      <%= link_to "Выйти из аккаунта", destroy_user_session_path,  method: :delete %>
+      <b class="nav user-email"><%= t('.greeting', current_user_name: current_user.name) %></b> |
+      <%= link_to t('.logout'), destroy_user_session_path,  method: :delete %>
     <% end %>
   </span>
 </nav>

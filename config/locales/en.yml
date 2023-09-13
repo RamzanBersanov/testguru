@@ -23,11 +23,22 @@ en:
         name: 'Name'
         email: 'Email'
         message: 'Message'
+  layouts:
+    application: 
+      title: TestGuru
+    admin:
+      admin_panel: Administrator panel
   shared:
     errors:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav: 
+      testguru: TestGuru
+      badges: Badges
+      admin_panel: Administrator panel 
+      greeting: "Welcome, %{current_user_name} Guru!"
+      logout: Log out
   gist:
     create:
       success: "Gist %{link} was created successfully"
@@ -57,15 +68,60 @@ en:
     show:
       header: 'To pass the %{test_title} test'
       all_questions: 'There are %{all_questions} questions overall'
+      progress_bar: Your progress
+      gist_question: Gist question
+  badges:
+    index:
+      user_badges: Your badges
+      all_badges: All badges
+      title: Title
+      picture: Picture
+      rule_value: Category or level
   admin:
     gists:
       index:
         header: "Users' gists"
         creator_email: "E-mail of user"
         question_body: "Question"
+    shared:
+      nav: 
+        testguru: TestGuru
+        badges: Manage badges
+        admin_panel: Administrator Panel
+        greeting: "Welcome, %{current_user_name} Guru!"
+        logout: Log out
+    answers:
+      answer:
+        edit_answer: Edit answer
+        delete_answer: Delete answer
+    badges:
+      index: 
+        header: All badges
+        user: User
+        name: Name
+        picture: Picture
+        rule_value: Category or level
+        action: Action
+      create:
+        success: Badge is successfully gained!
+      badge: 
+        delete: Delete
+    questions: 
+      edit: 
+        see_answers: See answers
+      question: 
+        show: See question
+        edit: Edit
+        delete: Delete
+      show:
+        actions: Actions
+        body: Answer
+        correct: Correctness
     tests:
       index:
         header: "Tricky tests"
+        title: Title
+        level: Level
         questions_count: 'The questions count'
         actions: 'Actions'
         create: 'Create new test'
@@ -87,7 +143,10 @@ en:
       new:
         header: 'Create new test'
       show:
-        create_question: 'Create a new question'
+        header: Test %{test}
+        question: Question
+        actions: Actions
+        create_question: Create new question
       form:
         prompt: 'Choose the category:'
       form_inline:
@@ -133,7 +192,20 @@ en:
       header:
         one: "%{count} error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
-activerecord:
+  activerecord:
+    attributes:
+      test:
+        title: Title
+        level: Level
+        author: Author
+      badge:
+        title: Title
+        picture: Image 
+      question:
+        body: Question body
+      answer:
+        body: Answer body 
+        correct: Correctness
   devise:
     failure:
       already_authenticated: You are already signed in.
